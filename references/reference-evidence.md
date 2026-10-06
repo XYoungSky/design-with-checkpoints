@@ -24,7 +24,7 @@ Use these distinctions in project records; labels need not clutter the user conv
 - **Normative requirement:** name the standard, version, criterion, conformance level, applicability, and exceptions. A criterion being mandatory for a selected conformance target does not by itself establish a legal obligation for this project.
 - **Measured observation:** include task/state, version, environment, method, result, and uncertainty. A single observation supports that observation, not a population claim.
 - **Design heuristic:** an informed starting point, such as proximity for grouping or stronger size contrast for hierarchy. State the task-based rationale and countervailing costs; test in context.
-- **Proposed parameter or hypothesis:** a type scale, grid count, line length, duration, easing curve, or budget chosen for trial. State a failure condition and whether it is approved and validated.
+- **Proposed parameter or hypothesis:** a type scale, grid count, line length, duration, easing curve, or budget chosen for trial. For a consequential trial, state a failure condition and whether it is approved and validated; routine tuning only needs the relevant quality checks.
 
 Do not launder heuristics into scientific laws. An 8-point spacing scale, golden ratio, fixed line length, particular font pairing, or 200 ms animation is not universally optimal. Brand expression and aesthetic preference remain legitimate criteria without pretending they are experimentally proven. Official design-system guidance is authoritative for its own system, not universal evidence of superiority.
 
@@ -65,6 +65,8 @@ Provide for each direction:
 Name directions to explain their differences. Do not hide identical structures behind abstract slogans. When the user has chosen a direction, explore only unresolved consequential points rather than deviating from the brief to manufacture options.
 
 ## Keep prototypes small and comparisons real
+
+Use dedicated comparisons for unresolved tradeoffs, difficult judgments, or costly rework. Routine tuning within the chosen direction needs checks of the affected layout or behavior, without a separate experiment or comparison document.
 
 Use an authorized isolated project location or the existing preview workflow. Do not replace production paths without approval. Build necessary actions with real DOM text and controls. Images may communicate a visual idea but cannot stand in for a working interface.
 
