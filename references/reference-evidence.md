@@ -4,7 +4,7 @@
 
 Verify the target URL, routes, version, and environment. Read existing design agreements. Open the current site. Use source code to explain tokens, states, and component ownership; use screenshots to document a particular viewport at a particular time; use actual interaction to support behavioral conclusions.
 
-Choose representative coverage: an entry page, a major inner page, a key task, and desktop and mobile viewports. Sample complex sites by template and state. Do not describe a sample as full-site coverage. Record login, data, region, and tooling limitations.
+For a sitewide audit, choose representative coverage: an entry page, a major inner page, a key task, and desktop and mobile viewports. For local work, inspect affected paths and states; include representative consumers of shared components or global styles. Sample complex sites by template and state. Do not describe a sample as full-site coverage. Record login, data, region, and tooling limitations.
 
 Prioritize these questions:
 
@@ -28,7 +28,7 @@ Use these distinctions in project records; labels need not clutter the user conv
 
 Do not launder heuristics into scientific laws. An 8-point spacing scale, golden ratio, fixed line length, particular font pairing, or 200 ms animation is not universally optimal. Brand expression and aesthetic preference remain legitimate criteria without pretending they are experimentally proven. Official design-system guidance is authoritative for its own system, not universal evidence of superiority.
 
-For consequential decisions, link requirement → evidence → decision → implementation → test/result. Revisit the affected link when facts or goals change. See [traceability](project-templates.md#requirements-to-tests).
+For consequential decisions, preserve the connection from requirement → evidence → decision → implementation → test/result in existing records or a concise explanation; separate documents and IDs are unnecessary unless they aid coordination. Revisit the affected link when facts or goals change. See [traceability](project-templates.md#requirements-to-tests).
 
 ## Research a specific problem
 
@@ -49,16 +49,16 @@ Do not infer precise easing, delay, interruption handling, or performance from s
 
 ## Turn references into design directions
 
-Define comparison axes before producing 2–3 project-specific directions. Make at least one core mechanism meaningfully different: selected narrative versus index browsing, linear reading versus a sectional overview, or direct action versus progressive disclosure. Explain how any difference in visual character serves the goal.
+When direction exploration is needed or requested, define comparison axes before producing meaningful project-specific alternatives. Use 2–3 for broad exploration, or follow the requested number; do not add candidates merely to fill a quota. Make at least one core mechanism meaningfully different: selected narrative versus index browsing, linear reading versus a sectional overview, or direct action versus progressive disclosure. Explain how any difference in visual character serves the goal.
 
 Hold core copy, data, main images, user task, viewport, and comparison scope constant. Do not give one candidate real content and another polished fictional copy, then attribute the difference to design.
 
-Provide for each direction:
+For each direction, include the following only to the depth needed for the current choice:
 
 1. Project goal and problem addressed.
 2. Information order and key layout.
 3. Typography, density, color roles, and interaction/motion strategy.
-4. Desktop first screen, one important downstream section, and mobile structure.
+4. Representative desktop and mobile context; for a whole-page direction, a first screen and important downstream section may be useful.
 5. Benefits, sacrifices, risks, and conditions for suitability.
 6. Reference mechanisms, your recommendation, and hypotheses to validate.
 

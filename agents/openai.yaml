@@ -1,4 +1,4 @@
 interface:
   display_name: "Design with Checkpoints"
   short_description: "Evidence-based frontend design with adaptive checkpoints"
-  default_prompt: "Use $design-with-checkpoints to audit this interface, explain professional design options in my language, and turn the approved direction into a testable frontend specification and verified implementation."
+  default_prompt: "Use $design-with-checkpoints for this frontend task, involve me in consequential choices I have not delegated, and match the work and verification to my requested outcome."

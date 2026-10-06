@@ -53,14 +53,14 @@ Preview, testing, and deployment capabilities come from your agent and project t
 
 | Task | Approach |
 | --- | --- |
-| New website | Establish goals and content, test a small sample, then build incrementally |
+| New website | Establish goals, content, and direction; test uncertain choices and build incrementally |
 | Redesign | Audit the existing interface, identify what to preserve, and propose improvements |
 | Plan or review only | Deliver recommendations, supporting evidence, and open checks; stop there |
 | Focused fix | Reproduce, change, and retest while preserving the existing direction |
 
 ## How collaboration works
 
-A typical flow is **understand → compare → prototype → implement → verify → deliver**. Use only the stages the task needs.
+Inspect the relevant interface, complete a verifiable batch, check its effects, and use feedback to guide the next step. Research, comparisons, prototypes, and separate specifications are used when the task needs them.
 
 - **Ask at meaningful decisions.** Discuss navigation, core flows, or changes in direction. Handle spacing, type sizes, and similar details within the chosen direction.
 - **Respect delegation.** Let the agent choose a direction, or ask to review a sample first. Preserve settled decisions and revisit them only when relevant conditions change.
@@ -146,14 +146,14 @@ $design-with-checkpoints 改进当前网站。
 
 | 任务 | 工作方式 |
 | --- | --- |
-| 新建网站 | 明确目标与内容，用小样确定方向后逐步实现 |
+| 新建网站 | 明确目标、内容与方向，验证不确定的选择后逐步实现 |
 | 改版现有页面 | 先审查，识别值得保留的设计，再提出改进 |
 | 只要方案或审查 | 交付建议、依据和待验证项，到此结束 |
 | 局部修复 | 定位问题、修改、复测，保持已有方向 |
 
 ### 如何协作
 
-典型过程是：**理解目标 → 比较方向 → 验证小样 → 实现 → 检查 → 交付**。按需进入相关阶段。
+检查相关界面，完成一批可验证的工作，检查影响，再根据反馈决定下一步。调研、方案比较、原型和独立规格文档按任务需要使用。
 
 - **关键选择再提问。** 导航结构、核心流程或方向变化需要讨论；已选方向内的间距、字号等细节通常直接处理。
 - **尊重你的委托。** 可以让 agent 自行选择方向，也可以指定“先给我看样例”。已有决定会被保留，只有相关条件变化时才重新讨论。

@@ -86,7 +86,7 @@ Show direct feedback and a noticeable state transition for the same operation; a
 
 ## Preserve decisions rather than complete chats
 
-Keep a short record for high-impact decisions: ID, question, evidence, alternatives, recommendation, user choice, approval scope, unresolved tests, and downstream effects. Preserve the user's exact intent and the source; do not broaden praise into approval.
+Preserve high-impact decisions in existing records or a concise handoff: the choice, rationale, approval or delegation scope, and unresolved consequences. Add alternatives, evidence links, or IDs only when useful for later work; do not create a separate record for routine adjustments. Preserve the user's exact intent and the source; do not broaden praise into approval.
 
 - “I like this font” records feedback on a font candidate, not approval of a sitewide redesign.
 - “Use A's structure and B's heading treatment” approves those specific parts; check compatibility.

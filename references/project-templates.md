@@ -2,7 +2,7 @@
 
 Contents: [brief](#brief-and-working-boundaries) · [traceability](#requirements-to-tests) · [evidence](#audit-or-reference-card) · [decisions](#decision-record) · [experiments](#prototype-experiment) · [frontend specification](#frontend-specification) · [feedback](#defect-and-feedback-batch) · [handoff](#acceptance-and-handoff) · [skill evaluation](#skill-regression-evaluation).
 
-Preserve only what helps work continue. Prefer the project's existing design records or agreed location; create a short record only when needed. Combine the following fragments as appropriate rather than requiring every field for every task. Link screenshots and recordings to identifiable versions so conclusions remain reviewable.
+Preserve only what helps work continue. Prefer the project's existing design records or agreed location; create a short record only when needed. Use the relevant fragments within one existing record; do not create a separate document for each template. A small change can be covered by its final handoff. Omit unused fields, formal IDs, and publishing details when they do not help the task. Link screenshots and recordings to identifiable versions so conclusions remain reviewable.
 
 ## Brief and working boundaries
 
@@ -20,7 +20,7 @@ Label unknowns as pending confirmation or testing. Do not convert assumptions in
 
 ## Requirements to tests
 
-For each consequential requirement, preserve one compact chain:
+For consequential requirements that need tracking across decisions, implementation, or handoffs, use the relevant fields below. A short explanation suffices for a simple change; IDs are optional:
 
 - Requirement ID, user task/outcome, source, priority, and constraint.
 - Baseline/evidence; normative requirement, measured observation, heuristic, or proposed hypothesis.
@@ -72,7 +72,7 @@ Acceptance statements should identify condition + behavior + evidence. Replace �
 
 ## Frontend specification
 
-Use this as an implementation contract and the basis of the final user-facing frontend plan. Localize its professional terminology to the user's language; explain the consequence of important choices briefly. Include only relevant sections, and link to detailed evidence instead of dumping every token into chat.
+Use this when a specification is requested or needed for complex behavior, cross-page coordination, or handoff. Reuse existing design and code records; document new agreements without transcribing unchanged implementation. Localize its professional terminology to the user's language; explain the consequence of important choices briefly. Include only relevant sections, and link to detailed evidence instead of dumping every token into chat.
 
 1. **Outcome and information architecture:** target audience/task, entry points, content priority, navigation, page/template hierarchy, and the critical path. Link decisions to requirements and preserve approved copy.
 2. **Design tokens and visual hierarchy:** reuse existing primitive and semantic tokens. Specify role → token → value/unit or existing source, including surface/text/action/feedback colors, spacing, typography, borders, radii, elevation, and motion only where used. Keep semantic roles separate from raw values so a palette change does not erase error/success/warning distinctions. Document component overrides and exceptions. Use the [DTCG format](https://www.designtokens.org/tr/2025.10/format/) only when token interchange benefits this project; it is a Community Group specification, not a required W3C Recommendation or an instruction to migrate tools.

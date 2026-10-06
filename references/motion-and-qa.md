@@ -59,13 +59,13 @@ Also test semantics, accessible names, labels/errors, status messages, and relev
 
 ## Build a project-specific test matrix
 
-Record the version, URL, browser/engine, viewport, zoom, input method, system preferences, and data state. Use the following as starting points, not a mandatory fixed device list:
+Select checks according to the changed behavior and its impact. Cover affected paths and states; broaden to representative consumers for shared components or global styles, and to agreed coverage for sitewide reviews or releases. Record the conditions needed to reproduce results, such as version, URL, browser, viewport, input, preferences, and data. The following are checks to select from, not a mandatory suite for every task:
 
 - Responsive layout: prioritize audience-relevant sizes, then narrow/wide viewports, both sides of breakpoints, and continuous resizing. Possible samples include 320, 390, 768, 1280, and 1440 CSS px. Use 320 for reflow checks, not as a proxy for every phone.
 - Zoom and reflow: inspect necessary content and functionality with text enlargement and page zoom. Record actual conditions. Analyze essential two-dimensional layouts separately rather than forcing everything into one column.
 - Input: test mouse, keyboard, and touch; Tab/Shift+Tab, Enter/Space, and Escape; visible focus, logical order, and focus restoration. Provide keyboard and touch access to hover information.
 - Content: use real text in supported languages, long headings, missing values, long lists, failed images, unloaded fonts, and loading/success/error states. Check wrapping, baselines, reading width, cropping, and hierarchy.
-- Copy/localization: inspect the full page and all interaction states, including headings, navigation, CTAs, forms, empty/loading/error messages, tooltips, permission notices, and accessible names. Check new text against the language priority in [the skill](../SKILL.md), the page's intended locale, and the project's voice. Apply the [interface copy guidance](interview-and-decisions.md#write-natural-interface-copy): remove empty slogans, forced reassurance, padded politeness, and implementation commentary. Preserve protected copy and necessary contextual information. Check that action labels match behavior and status messages provide useful context and recovery steps.
+- Copy/localization: inspect changed copy and affected states; for a full-page review, cover the page and its interaction states, including headings, navigation, CTAs, forms, empty/loading/error messages, tooltips, permission notices, and accessible names. Check new text against the language priority in [the skill](../SKILL.md), the page's intended locale, and the project's voice. Apply the [interface copy guidance](interview-and-decisions.md#write-natural-interface-copy): remove empty slogans, forced reassurance, padded politeness, and implementation commentary. Preserve protected copy and necessary contextual information. Check that action labels match behavior and status messages provide useful context and recovery steps.
 - Paths: test primary calls to action, navigation, internal/external links, deep links, refresh, and browser back/forward. Test forms in a safe environment or with approved data; do not send real messages, orders, or external submissions without authorization.
 - Motion: rapidly retrigger, reverse during playback, alternate opening/closing, reverse scrolling, return immediately, change routes, and blur/refocus the page. Check residual styles, overlays, scroll locks, and inconsistent state.
 - System preferences: test both `no-preference` and `reduce`. If the implementation listens for preference changes, also test changes during use.
@@ -74,7 +74,7 @@ Record the version, URL, browser/engine, viewport, zoom, input method, system pr
 
 ## Inspect visuals in addition to build results
 
-Inspect full pages and key states. Check first-glance hierarchy, text rhythm, whitespace and density, component relationships, image crops, cross-page consistency, and whether mobile still expresses the chosen direction. Compare screenshots with the brief, prototypes, and approved decisions rather than unrelated “premium” sites.
+Inspect affected layouts in their surrounding page context and relevant states; broaden to full pages for page-level or sitewide work. Check first-glance hierarchy, text rhythm, whitespace and density, component relationships, image crops, cross-page consistency, and whether mobile still expresses the chosen direction. Compare screenshots with the brief, prototypes, and approved decisions rather than unrelated “premium” sites.
 
 Separate two kinds of findings and provide evidence for each:
 
@@ -99,6 +99,6 @@ Record each defect's reproduction conditions, expected/actual behavior, user imp
 
 Present an identified candidate and a consolidated change batch. Do not deploy every small adjustment directly to production. Follow the established preview/publishing mode and host policy. Check design choices, candidate acceptance, and permission for public actions separately; do not ask again for valid existing authorization.
 
-Before publishing, complete necessary path, resource, responsive, and motion QA in a real preview. After publishing, use the current host's permitted checks to verify deployment and, where available, the production experience. State exactly which checks ran and what they establish.
+Before publishing, confirm a recovery or rollback method and complete necessary path, resource, responsive, and motion QA in a real preview. After publishing, use the current host's permitted checks to verify deployment and, where available, the production experience. State exactly which checks ran and what they establish.
 
 Continue handling recoverable failures within authorized scope. Pause at the exact blocker if new permission is needed. Report deployment status, tested coverage, and unverified areas separately. Successful deployment does not establish a tested production experience.
