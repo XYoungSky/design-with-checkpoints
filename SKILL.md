@@ -5,7 +5,7 @@ description: "Design, redesign, and review websites and frontend interfaces usin
 
 # Design with Checkpoints
 
-Turn the user's goals into comparable, usable, verifiable designs. Own research, recommendations, and implementation; leave consequential design choices to the user. Avoid both exhaustive questionnaires and a full-site redesign based only on “make it look better.”
+Turn the user's goals into comparable, usable, verifiable designs. Own research, recommendations, and implementation; involve the user in unresolved consequential choices and honor decisions they delegate. Avoid both exhaustive questionnaires and a full-site redesign based only on “make it look better.”
 
 Keep this skill package in English. Write project records in the project's appropriate language. Present questions, options, recommendations, and final frontend plans in the user's language, using precise frontend and interaction-design terminology followed by concise practical implications. Preserve code/API identifiers. Do not replace technical clarity with vague labels such as “premium,” or add jargon that does not distinguish a decision.
 
@@ -14,7 +14,7 @@ Newly authored page and UI content also defaults to the user's conversation lang
 ## Route the task
 
 1. Read the conversation, project conventions, and approved versions. Confirm the target site, scope, and specified environment. Verify discoverable facts yourself; ask only when the target remains ambiguous. Do not guess a repository or reuse another project's assumptions.
-2. Take the shortest relevant path: start new work with goals and content; audit before redesigning; inspect only affected paths for local fixes; resume an approved direction at its current stage. Do not repeat answered questions to satisfy a process.
+2. Take the shortest relevant path: start new work with goals and content; audit before redesigning; inspect only affected paths for local fixes; resume an approved direction at its current stage. Match the requested deliverable: a plan ends with actionable recommendations and proposed checks; a review ends with evidenced findings and priorities. Continue into implementation only when requested. Do not repeat answered questions to satisfy a process.
 3. Establish the preview and delivery mode: local/file delivery, external preview, or production update. Record the target, visibility, existing authorization, and change batches. Follow the host's site-building, hosting, upload, and publishing policies first. This skill neither expands permission nor overrides those policies. Continue permitted local work while required authorization is pending.
 4. Load only references needed for the current stage:
    - Read [Interview and decisions](references/interview-and-decisions.md) when asking questions, choosing directions, or resolving feedback.
@@ -32,7 +32,8 @@ For a local fix: reproduce → identify the affected layout/state/token → make
 - Judge designs using real content. Label temporary data and assets. Never invent clients, results, quotations, testimonials, or business commitments.
 - Usually ask only 1–3 questions that change the next step. Give project-specific evidence, a concrete recommendation, viable alternatives, and their costs. Resolve dependencies first; do not ask the user to supply facts you can verify.
 - Distinguish recommendations, experimental values, and approved decisions. Silence is not approval. Liking a reference image does not approve a full redesign or public access.
-- Pause work that depends on an unanswered consequential decision. Continue independent audits, research, and low-cost experiments without quietly committing to an unchosen direction.
+- Use checkpoints for unresolved choices that materially change the user's goal, direction, core interaction, scope, or cost of rework. Existing decisions and explicit delegation satisfy the relevant checkpoint; record the rationale and proceed within that scope. Preserve any review points the user specifically requested.
+- Pause work that depends on an unanswered, non-delegated consequential decision. Continue independent audits, research, and low-cost experiments without quietly committing to an unchosen direction.
 - Handle pixel-level corrections, missing states, and implementation details within approved scope. Reopen only affected decisions when direction, information architecture, core interaction, or scope changes.
 - Separate observed behavior, source-code inference, and unverified claims. A screenshot does not prove motion quality, a successful build does not prove usability, and mobile emulation does not prove physical-device behavior.
 - Distinguish normative requirements, measured observations, design heuristics, and proposed testable parameters. Record the applicable standard/version/level and exceptions. Neither popularity nor a design system proves that an aesthetic choice improves outcomes.
@@ -42,11 +43,11 @@ For a local fix: reproduce → identify the affected layout/state/token → make
 
 Inspect an existing site in a real browser. State whether it is the assistant's browser or the user's browser. Cover the homepage, representative inner pages, key paths, and desktop and mobile viewports. Open menus, switch states, scroll, and navigate. Record the version, URL, viewport, time, and evidence. Use source code to confirm implementation ownership and constraints, not as a substitute for rendered inspection.
 
-Report a few high-value findings: features to preserve, problems with the greatest impact on user tasks, specific changes, and risks. If browser access is unavailable, label the analysis as preliminary; do not claim a completed site or motion audit.
+Report a few high-value findings: features to preserve, problems with the greatest impact on user tasks, specific changes, and risks. If browser access is unavailable, continue source inspection and permitted local checks, mark rendered and interactive behavior unverified, and identify what remains to test. Do not claim a completed site or motion audit.
 
 Summarize the audience, main task, content priorities, preserved elements, scope, constraints, and acceptance criteria in a short brief. Capture the baseline when comparison matters. Specify the accessibility target, supported inputs/viewports, and evidence needed for task success and performance. Treat unmeasured targets as proposals. Ask only about unsettled goals; do not reconfirm established decisions.
 
-Checkpoint: clarify goals and scope that affect information architecture before choosing the overall structure and visual direction. Research references in parallel, but do not expand implementation across the site yet.
+Checkpoint, when goals or scope remain unsettled: resolve what affects information architecture before choosing the overall structure and visual direction. Research references in parallel while dependent implementation waits.
 
 ## 2. Research and propose directions
 
@@ -56,7 +57,7 @@ For substantial exploration, propose 2–3 meaningfully different directions. Us
 
 Explain each direction's project fit, main benefits, real sacrifices, and untested risks. Recommend one and give the evidence. Do not manufacture alternatives when the user has already specified a direction or restart full-site concepts for a narrow change.
 
-Checkpoint: obtain the main direction and important layout choices. If the user wants a combination, confirm its specific parts and resolve conflicts rather than assuming all benefits can be combined. Record the decision before proceeding.
+Checkpoint, when direction is neither chosen nor delegated: obtain the main direction and important layout choices. If the user wants a combination, preserve the specified parts and resolve consequential conflicts. Record the decision before proceeding.
 
 ## 3. Choose through small interactive prototypes
 
@@ -66,7 +67,7 @@ Make paired samples for consequential typography, layout, or motion choices. Sta
 
 Define the purpose, trigger, states, repeat frequency, interruption/reversal behavior, touch and keyboard behavior, reduced-motion alternative, and measurement method for important animations. Demonstrate normal-speed and repeated use. Edited recordings and the presence of code do not establish a passing test.
 
-Checkpoint: confirm important layouts, core interactions, and distinctive motion before expanding sitewide. Approval of a sample does not establish acceptance of unseen pages or exceptional states.
+Checkpoint, for unresolved choices or a requested sample review: show the working sample and wait for that decision before expanding sitewide. When no such checkpoint remains, verify the sample and continue within the approved or delegated direction. Approval of a sample does not establish acceptance of unseen pages or exceptional states.
 
 ## 4. Implement within approved scope
 
@@ -80,7 +81,7 @@ Work in batches organized around verifiable user paths. Fix implementation that 
 
 Inspect the running page for hierarchy, typography, proportion, cropping, content rhythm, and cross-page consistency. Also test core paths, keyboard and touch use, responsive behavior, loading/error states, console output, and performance. Use [Motion and QA](references/motion-and-qa.md) to test repeated input, interruption, reversal, and system reduced-motion preferences.
 
-When possible, have an independent reviewer perform the same tasks with the brief, approved direction, and version, without seeding conclusions. For user testing, use neutral task prompts and record unaided success, assistance, errors, and recovery. An agent walkthrough is not human usability research. Automated scans and model scores cannot replace visual judgment and real interaction.
+For substantial or uncertain changes, use an independent reviewer when available and permitted, with the brief, approved direction, and version, without seeding conclusions. For user testing, use neutral task prompts and record unaided success, assistance, errors, and recovery. An agent walkthrough is not human usability research. Automated scans and model scores cannot replace visual judgment and real interaction.
 
 Retest fixes under the original reproduction conditions. Report tested scope, untested scope, and remaining impact. Do not recommend release with unresolved serious functional, content, responsive, or accessibility problems. Ask the user to accept an identified candidate version rather than asking an abstract “Are you happy?”
 
@@ -90,6 +91,6 @@ Classify feedback as an implementation defect, local adjustment, direction chang
 
 Record design approval, candidate acceptance, and publishing authorization separately. Do not mechanically reconfirm valid authorization when the target, version scope, and risk remain materially unchanged. External uploads and publicly accessible previews must also comply with current policies and permissions. Handle an urgent production fix according to its actual authorization and risk; do not bundle in an unapproved redesign.
 
-Deliver the identified version and a concise frontend plan/specification in the user's language: decisions and rationale, layout/type/tokens, component/state/focus rules, motion, responsive behavior, and acceptance results or pending tests. Scale this to the task. Include the access method and unverified scope. For an authorized release, verify the production target and rollback method. Complete necessary real-preview QA before publishing. After publishing, use host-permitted native deployment status or health checks. Do not bypass a host's prohibition on fetching a production URL solely for publishing acceptance. Production debugging requires its relevant authorization and policies. Report deployment status and experience verification separately.
+Deliver the requested plan, review, or identified implementation in the user's language. For implementation, summarize consequential design decisions, changed behavior, acceptance results, and pending tests; link the specification rather than repeating it. Include the access method and unverified scope. For an authorized release, verify the target and rollback method, complete necessary preview QA, and perform production checks permitted by the current host. Report deployment status and experience verification separately.
 
-Stop when the agreed files/preview are delivered or the authorized release passes the agreed production checks. A necessary decision or permission blocker may also stop dependent work. Do not polish indefinitely, expand scope without approval, or infer verified production behavior from deployment-process success.
+Stop when the requested plan/review or agreed files/preview are delivered, or the authorized release passes the agreed production checks. A necessary decision or permission blocker may also stop dependent work. Do not polish indefinitely, expand scope without approval, or infer verified production behavior from deployment-process success.

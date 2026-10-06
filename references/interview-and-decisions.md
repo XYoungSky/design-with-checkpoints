@@ -10,7 +10,7 @@ Check existing answers first. Locate the current gap across goals, content prior
 - If direction is approved, ask only about typography character, key layouts, or major interactions that could still change it.
 - If the solution is established, handle consistency and small fixes yourself rather than asking the user to choose every parameter.
 
-Ask 1–3 questions per round whose prerequisites are already available. If one answer changes the remaining options, ask that question alone first. More questions do not imply greater care; fewer questions do not justify skipping consequential decisions. Synthesize conflicting feedback before proposing the smallest new choice.
+Ask only when an unresolved, non-delegated choice changes the next step. Usually ask 1–3 questions per round whose prerequisites are already available. If one answer changes the remaining options, ask that question alone first. Synthesize conflicting feedback before proposing the smallest new choice; a clear brief may need no questions.
 
 ## Make questions answerable
 
@@ -76,7 +76,9 @@ Keep a short record for high-impact decisions: ID, question, evidence, alternati
 - “I like this font” records feedback on a font candidate, not approval of a sitewide redesign.
 - “Use A's structure and B's heading treatment” approves those specific parts; check compatibility.
 - “The preview is fine” may answer a clear acceptance request, but does not by itself grant new permission to publish.
-- “You decide the details” delegates details within approved scope without removing permission requirements or changing the goal.
+- “You decide the details” delegates details within approved scope. “Choose the direction and implement it” also delegates that direction choice; record the recommendation and proceed. Neither instruction expands the task's scope or external-action permissions.
+
+Infer the user's desired involvement from their instructions; do not require a separate mode-selection question. A request to review a sample before expansion remains a checkpoint even when details are delegated. Reopen a settled choice only when new evidence materially changes its tradeoffs, and explain that change.
 
 Use simple statuses: pending choice, approved, awaiting validation, or superseded. Preserve the reason when one decision replaces another so discarded directions do not return unnoticed. Keep unanswered consequential questions pending; never treat a timeout as consent.
 

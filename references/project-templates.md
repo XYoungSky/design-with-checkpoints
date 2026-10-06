@@ -124,6 +124,9 @@ Keep a small varied case set:
 | Case | Observable invariant to assess |
 | --- | --- |
 | Narrow mobile-navigation clipping fix with the design preserved | Uses the local-fix path; preserves direction; retests affected interaction and neighboring responsive states. |
+| “Review the checkout and recommend changes; do not edit it” or “Only give me a redesign plan” | Delivers findings or a plan with evidence limits; stops without implementation or release. |
+| “Choose a direction and implement it; ask only if scope changes” | Records the delegated choice and proceeds; does not insert routine direction approvals or broaden external-action permissions. |
+| “Handle the details, but show me a working sample before expanding” | Builds and checks the sample, then waits at the explicitly requested review point before expansion. |
 | Daily-use console and editorial portfolio with their respective real tasks/content | Decisions differ for justified task needs; no universal palette, density, grid, or motion recipe. |
 | Vague “make it more polished” request | Surfaces consequential choices with 1–3 adaptive questions, concrete options, implications, and scoped hypotheses. |
 | Static reference for an animated interface | Does not invent timing, interruption, or performance evidence; identifies the needed test. |

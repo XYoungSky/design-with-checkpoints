@@ -81,7 +81,7 @@ Separate two kinds of findings and provide evidence for each:
 - Functional/quality defects: reproducible task blockers, incorrect states or content, and responsive or accessibility failures.
 - Design judgments: hierarchy, rhythm, distinctiveness, or density that conflicts with the goal or chosen direction. Explain reasons and alternatives without presenting taste as an objective standard.
 
-Have an independent reviewer browse and interact with the same version using the same brief. Prioritize high-impact findings rather than diluting them with many low-value suggestions. Retest fixes under the original conditions. A higher self-score, clean scan, or successful build does not establish acceptance.
+For substantial or uncertain changes, use an independent reviewer when available and permitted, with the same brief and version. Otherwise complete the available checks and identify them as self-review. Prioritize high-impact findings. Retest fixes under the original conditions. A higher self-score, clean scan, or successful build does not establish acceptance.
 
 ## Match performance claims to evidence
 
@@ -99,6 +99,6 @@ Record each defect's reproduction conditions, expected/actual behavior, user imp
 
 Present an identified candidate and a consolidated change batch. Do not deploy every small adjustment directly to production. Follow the established preview/publishing mode and host policy. Check design choices, candidate acceptance, and permission for public actions separately; do not ask again for valid existing authorization.
 
-Before publishing, complete necessary path, resource, responsive, and motion QA in a real preview. After publishing, follow host verification policy: use permitted native deployment status or health checks, and open the production URL to verify the version and core experience only when the host allows it. Do not bypass restrictions on production fetching for publishing acceptance. If the user explicitly requests production debugging, inspect within the relevant policy and authorization.
+Before publishing, complete necessary path, resource, responsive, and motion QA in a real preview. After publishing, use the current host's permitted checks to verify deployment and, where available, the production experience. State exactly which checks ran and what they establish.
 
 Continue handling recoverable failures within authorized scope. Pause at the exact blocker if new permission is needed. Report deployment status, tested coverage, and unverified areas separately. Successful deployment does not establish a tested production experience.
