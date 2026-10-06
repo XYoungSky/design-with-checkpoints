@@ -7,9 +7,9 @@ description: "Design, redesign, and review websites and frontend interfaces usin
 
 Turn the user's goals into comparable, usable, verifiable designs. Own research, recommendations, and implementation; involve the user in unresolved consequential choices and honor decisions they delegate. Avoid both exhaustive questionnaires and a full-site redesign based only on “make it look better.”
 
-Keep this skill package in English. Write project records in the project's appropriate language. Present questions, options, recommendations, and final frontend plans in the user's language, using precise frontend and interaction-design terminology followed by concise practical implications. Preserve code/API identifiers. Do not replace technical clarity with vague labels such as “premium,” or add jargon that does not distinguish a decision.
+Explain design choices in the user's language, using concrete tradeoffs and defining unfamiliar terms when needed. Follow project conventions for records and preserve code/API identifiers.
 
-For newly authored page and UI content, follow this language priority: explicit user instructions → established project language and confirmed audience requirements → conversation language when neither establishes a choice. Preserve the existing locale structure; clarify a material conflict between project language and audience requirements before translating content. Adding a bilingual treatment requires an explicit choice; do not add English for decoration. Preserve existing/source copy when instructed. Use natural, direct, audience-appropriate words across headings, navigation, CTAs, labels, tooltips, accessible names, and empty/loading/error/permission states. Professional frontend terms belong in design discussions/specifications; do not leak them into end-user UI or replace natural wording with bureaucratic language. Do not write affected faux-gentle or poetic filler, or redundant persistent explanations of obvious interface/permission mechanics. Retain concise contextual information necessary for the task, access, informed consent, safety, or legal requirements. Include copy in QA, not only in the assistant's reply.
+For newly authored page and UI content, follow this language priority: explicit user instructions → established project language and confirmed audience requirements → conversation language when neither establishes a choice. Preserve existing locales and protected copy; clarify material conflicts before translating content. Match the project's voice and the audience's vocabulary. Make labels, instructions, and status messages clear and actionable, with necessary context at the point of use. Avoid generic promotional slogans, forced intimacy or poetic reassurance, padded politeness, and commentary about the implementation process. Use concrete actions and facts rather than vague promises. Apply the [interface copy guidance](references/interview-and-decisions.md#write-natural-interface-copy) and include copy in QA.
 
 ## Route the task
 
@@ -23,7 +23,7 @@ For newly authored page and UI content, follow this language priority: explicit 
    - Use [Project templates](references/project-templates.md) when preserving context or preparing a handoff.
    - Read [Sources and evidence limits](references/sources.md) when checking attribution, evidence strength, or third-party reuse.
 
-For a local fix: reproduce → identify the affected layout/state/token → make the smallest authorized change → retest the affected path and nearby regressions → report evidence. Skip direction variants, broad interviews, and full-site specifications unless the fix exposes a consequential choice. When maintaining this skill itself, use the regression protocol in [Project templates](references/project-templates.md#skill-regression-evaluation).
+For a local fix: reproduce → identify the affected layout/state/token → make the smallest authorized change → retest the affected path and nearby regressions → report evidence. Skip direction variants, broad interviews, and full-site specifications unless the fix exposes a consequential choice.
 
 ## Apply these rules throughout
 
@@ -83,7 +83,7 @@ Inspect the running page for hierarchy, typography, proportion, cropping, conten
 
 For substantial or uncertain changes, use an independent reviewer when available and permitted, with the brief, approved direction, and version, without seeding conclusions. For user testing, use neutral task prompts and record unaided success, assistance, errors, and recovery. An agent walkthrough is not human usability research. Automated scans and model scores cannot replace visual judgment and real interaction.
 
-Retest fixes under the original reproduction conditions. Report tested scope, untested scope, and remaining impact. Do not recommend release with unresolved serious functional, content, responsive, or accessibility problems. Ask the user to accept an identified candidate version rather than asking an abstract “Are you happy?”
+Retest fixes under the original reproduction conditions. Report tested scope, untested scope, and remaining impact. Do not recommend release with unresolved serious functional, content, responsive, or accessibility problems. When user acceptance is a requested or agreed checkpoint, present an identified candidate version and wait for that decision rather than asking an abstract “Are you happy?” Otherwise, deliver the verified result within existing authorization without adding a confirmation step; distinguish completed checks from user acceptance.
 
 ## 6. Consolidate feedback and deliver as authorized
 

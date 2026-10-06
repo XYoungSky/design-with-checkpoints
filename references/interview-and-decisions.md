@@ -39,7 +39,22 @@ Compact question pattern: **Decision and evidence → A/B mechanisms and tradeof
 
 For a substantial final plan, name information architecture, semantic tokens, type hierarchy, grid/gutters, responsive rules, component states, focus management, motion choreography, and acceptance tests accurately. Pair each consequential technical statement with a practical implication. For a narrow fix, name only the affected mechanisms. Use the [frontend specification](project-templates.md#frontend-specification); do not produce a vocabulary list in place of a design.
 
-State the UI language and content-design rule in the plan, following the language priority in [the skill](../SKILL.md). For example, discuss an English site's changes in Chinese when that is the conversation language, while keeping new interface labels in English unless the user requests a change. Preserve established localization and protected source copy. Write specific action labels and useful status/recovery messages; avoid faux-gentle poetic instructions, ornamental slogans, and persistent meta commentary about obvious access rules. Explain permissions or restrictions at the point of need when they affect a decision or safe use. Keep two registers distinct: precise frontend terminology for decisions/specifications, and natural everyday vocabulary for the site's actual audience. UI copy must not sound like an implementation report or a bureaucratic notice.
+State the UI language and content-design rule in the plan, following the language priority in [the skill](../SKILL.md). The discussion language may differ from the interface language. Preserve established localization and protected copy. Describe design tradeoffs precisely in specifications; write interface text for its audience, with clear actions, useful recovery messages, and necessary context at the point of use.
+
+## Write natural interface copy
+
+Write text that belongs in the product and sounds natural to its audience. Avoid empty superlatives, generic promises, forced intimacy, poetic reassurance, and long courtesy formulas around simple actions. Keep implementation reports and explanations of the design process out of the interface. Explain access restrictions, consequences, and recovery steps where they help users act; preserve necessary consent, security, and legal information.
+
+Prefer a specific action, object, or state. Describe errors using known facts and a useful next step; do not invent a cause to make the message sound helpful. Judge phrases in context rather than maintaining a blacklist of individual words. Brand personality can shape the voice while labels and instructions remain clear.
+
+Illustrative rewrites; adapt them to the actual behavior and locale:
+
+| Context | Avoid | Prefer |
+| --- | --- | --- |
+| Project navigation | “开启灵感之旅，探索无限可能” | “查看项目” |
+| Empty saved-items list | “这里静候着与你的美好相遇” | “还没有收藏” |
+| Save confirmation | “We're delighted to let you know your changes have been successfully saved!” | “Changes saved.” |
+| Failed upload, cause unknown | “Oops! A little hiccup interrupted your journey.” | “Upload failed. Try again.” |
 
 ## Adapt questions to the project
 
@@ -49,7 +64,7 @@ Use the following as question-building examples, not a universal questionnaire o
 
 For first-time visitors, compare a small narrative-led selection with an index-first layout. The former controls emphasis; the latter supports quick filtering. Test first-glance hierarchy with the same work and assets.
 
-To explore personal character, show two typography samples using real Chinese and English headings and body text when relevant. Explain tradeoffs among distinctiveness, long-form reading, font loading, and mobile wrapping. Do not ask the user to choose font names in isolation.
+To explore personal character, show two typography samples using real headings and body text in the project's supported languages. Explain tradeoffs among distinctiveness, long-form reading, font loading, and mobile wrapping. Do not ask the user to choose font names in isolation.
 
 ### Frequently used product interface
 

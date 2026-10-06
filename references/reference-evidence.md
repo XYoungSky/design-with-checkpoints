@@ -68,9 +68,9 @@ Name directions to explain their differences. Do not hide identical structures b
 
 Use dedicated comparisons for unresolved tradeoffs, difficult judgments, or costly rework. Routine tuning within the chosen direction needs checks of the affected layout or behavior, without a separate experiment or comparison document.
 
-Use an authorized isolated project location or the existing preview workflow. Do not replace production paths without approval. Build necessary actions with real DOM text and controls. Images may communicate a visual idea but cannot stand in for a working interface.
+When a working prototype is needed and implementation is within scope, use an authorized isolated project location or the existing preview workflow. Do not replace production paths without approval. Build necessary actions with real DOM text and controls. Images may communicate a visual idea but cannot establish interaction behavior.
 
-Start with the riskiest segment: first screen and following section, list and detail, critical form, or mobile menu. Show one version at full size, then switch under the same conditions. If you provide side-by-side screenshots, also provide an operable version.
+Start with the riskiest segment: first screen and following section, list and detail, critical form, or mobile menu. Show one version at full size, then switch under the same conditions. Use screenshots for visual comparisons; provide an operable version when the decision depends on interaction and implementation is within scope. For plan-only or review-only tasks, describe any needed prototype and leave untested behavior explicit.
 
 Write one hypothesis and one failure condition per experiment. For example: “Exposing the main entry lets returning visitors reach the index in one fewer action; the layout fails if real labels overflow on narrow screens.” Do not describe personal preference as user-research evidence.
 
@@ -86,7 +86,7 @@ Include disabled users when feasible and authorized, without treating their indi
 
 ## Stop research when the decision is supported
 
-Move to a decision once there are relevant references, comparable prototypes, and clear tradeoffs. Do not substitute collecting links for progress. Research again when a significant new constraint appears.
+Move to a decision once the available evidence supports the choice and its consequential tradeoffs are clear. Use references or comparable prototypes only where they resolve a material uncertainty; do not require them for settled choices or routine adjustments. Do not substitute collecting links for progress. Research again when a significant new constraint appears.
 
 A cited article or open-source project establishes what its source proposes, not that the method is necessarily better for this project. Distinguish author demonstrations, personal reports, reproducible experiments, and normative requirements. Test aesthetic advice against project outcomes rather than popularity, downloads, or automated scores.
 
