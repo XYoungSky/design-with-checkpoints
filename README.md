@@ -94,6 +94,10 @@ Delivery explains what changed, what was tested, and what remains unverified. Pu
 - [Project templates](references/project-templates.md): briefs, specifications, handoffs, and regression scenarios.
 - [Sources and evidence limits](references/sources.md): method sources and their applicability.
 
+## License
+
+Licensed under the [MIT License](LICENSE).
+
 ## 简体中文
 
 一个面向前端设计的 skill，涵盖调研、方向选择、原型、实现与验证，让用户参与关键决策。
@@ -184,3 +188,7 @@ $design-with-checkpoints 改进当前网站。
 - [动效与质量检查](references/motion-and-qa.md)：交互、响应式、可访问性与性能检查。
 - [项目模板](references/project-templates.md)：简报、设计规格、交付记录和回归场景。
 - [来源与适用边界](references/sources.md)：方法来源及其使用限制。
+
+### 许可证
+
+本项目采用 [MIT License](LICENSE)。
