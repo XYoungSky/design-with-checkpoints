@@ -18,16 +18,18 @@ npx skills@latest add XYoungSky/design-with-checkpoints --skill design-with-chec
 
 Select your target agent in the installer. Add `--global` to install across projects, or `--agent codex` / `--agent claude-code` to choose an agent directly. See the [skills CLI documentation](https://github.com/vercel-labs/skills#install-a-skill) for other supported agents and options.
 
+The CLI installs only the contents of `skills/design-with-checkpoints/`. Files outside that folder are not copied into the installed skill.
+
 ### Manual installation
 
-Download and extract the repository, then place its contents in a folder named `design-with-checkpoints` at one of these locations:
+Download and extract the repository, then copy the `skills/design-with-checkpoints/` folder to one of these locations:
 
 | Agent | This project | All your projects |
 | --- | --- | --- |
 | [Codex](https://developers.openai.com/codex/skills#where-to-save-skills) | `.agents/skills/design-with-checkpoints/` | `~/.agents/skills/design-with-checkpoints/` |
 | [Claude Code](https://code.claude.com/docs/en/skills#choose-where-skills-load) | `.claude/skills/design-with-checkpoints/` | `~/.claude/skills/design-with-checkpoints/` |
 
-Keep `SKILL.md`, `references/`, and `agents/` together, with `SKILL.md` directly inside that folder. No build step is required. Open or reload your agent and confirm the skill is available.
+Keep `SKILL.md`, `references/`, `agents/`, and `LICENSE` together, with `SKILL.md` directly inside the installed folder. No build step is required. Open or reload your agent and confirm the skill is available.
 
 ## Quick start
 
@@ -87,12 +89,12 @@ Delivery explains what changed, what was tested, and what remains unverified. Pu
 
 ## Files
 
-- [SKILL.md](SKILL.md): agent instructions and workflow.
-- [Interview and decisions](references/interview-and-decisions.md): options, decision records, and feedback.
-- [Reference evidence](references/reference-evidence.md): research, prototype comparisons, and evidence quality.
-- [Motion and QA](references/motion-and-qa.md): interaction, responsive behavior, accessibility, and performance checks.
-- [Project templates](references/project-templates.md): briefs, specifications, handoffs, and regression scenarios.
-- [Sources and evidence limits](references/sources.md): method sources and their applicability.
+- [SKILL.md](skills/design-with-checkpoints/SKILL.md): agent instructions and workflow.
+- [Interview and decisions](skills/design-with-checkpoints/references/interview-and-decisions.md): options, decision records, and feedback.
+- [Reference evidence](skills/design-with-checkpoints/references/reference-evidence.md): research, prototype comparisons, and evidence quality.
+- [Motion and QA](skills/design-with-checkpoints/references/motion-and-qa.md): interaction, responsive behavior, accessibility, and performance checks.
+- [Project templates](skills/design-with-checkpoints/references/project-templates.md): briefs, specifications, handoffs, and regression scenarios.
+- [Sources and evidence limits](skills/design-with-checkpoints/references/sources.md): method sources and their applicability.
 
 ## License
 
@@ -116,16 +118,18 @@ npx skills@latest add XYoungSky/design-with-checkpoints --skill design-with-chec
 
 按提示选择目标 agent。添加 `--global` 可跨项目使用；添加 `--agent codex` 或 `--agent claude-code` 可直接指定 agent。其他支持的工具与选项见 [skills CLI 文档](https://github.com/vercel-labs/skills#install-a-skill)。
 
+CLI 只会把 `skills/design-with-checkpoints/` 中的内容复制到安装后的 skill 目录，该文件夹之外的文件不会被复制进去。
+
 #### 手动安装
 
-下载并解压仓库，将内容放入名为 `design-with-checkpoints` 的文件夹，选择以下一个位置：
+下载并解压仓库，将其中的 `skills/design-with-checkpoints/` 文件夹复制到以下一个位置：
 
 | Agent | 当前项目 | 所有项目 |
 | --- | --- | --- |
 | [Codex](https://developers.openai.com/codex/skills#where-to-save-skills) | `.agents/skills/design-with-checkpoints/` | `~/.agents/skills/design-with-checkpoints/` |
 | [Claude Code](https://code.claude.com/docs/en/skills#choose-where-skills-load) | `.claude/skills/design-with-checkpoints/` | `~/.claude/skills/design-with-checkpoints/` |
 
-完整保留 `SKILL.md`、`references/` 和 `agents/`，确保 `SKILL.md` 直接位于该文件夹中。无需构建。打开或重新加载 agent，确认它能识别此 skill。
+完整保留 `SKILL.md`、`references/`、`agents/` 和 `LICENSE`，确保 `SKILL.md` 直接位于安装后的文件夹中。无需构建。打开或重新加载 agent，确认它能识别此 skill。
 
 ### 快速开始
 
@@ -182,12 +186,12 @@ $design-with-checkpoints 改进当前网站。
 
 ### 文件导航
 
-- [SKILL.md](SKILL.md)：agent 的入口规则与工作流程。
-- [提问与决策](references/interview-and-decisions.md)：如何提出选项、记录选择和处理反馈。
-- [参考与证据](references/reference-evidence.md)：如何研究案例、比较原型和判断证据。
-- [动效与质量检查](references/motion-and-qa.md)：交互、响应式、可访问性与性能检查。
-- [项目模板](references/project-templates.md)：简报、设计规格、交付记录和回归场景。
-- [来源与适用边界](references/sources.md)：方法来源及其使用限制。
+- [SKILL.md](skills/design-with-checkpoints/SKILL.md)：agent 的入口规则与工作流程。
+- [提问与决策](skills/design-with-checkpoints/references/interview-and-decisions.md)：如何提出选项、记录选择和处理反馈。
+- [参考与证据](skills/design-with-checkpoints/references/reference-evidence.md)：如何研究案例、比较原型和判断证据。
+- [动效与质量检查](skills/design-with-checkpoints/references/motion-and-qa.md)：交互、响应式、可访问性与性能检查。
+- [项目模板](skills/design-with-checkpoints/references/project-templates.md)：简报、设计规格、交付记录和回归场景。
+- [来源与适用边界](skills/design-with-checkpoints/references/sources.md)：方法来源及其使用限制。
 
 ### 许可证
 

@@ -14,7 +14,7 @@ Apply the [required question checkpoints](../SKILL.md#keep-the-user-involved). F
 
 ## Count questions and control each round
 
-Count distinct, answerable questions actually posed to the user for the current stage or change request. Explanations, recommendations, rhetorical questions, and rewordings of an already-answered question do not add to the count. If a numbered item requests several independent answers, count each separately; grouping them under one heading does not bypass the cap. One question about layout cannot also count as one of the two required motion questions.
+Count distinct, answerable questions actually posed to the user for the current stage or change request. The three choices and custom-answer entry belong to one question, not four questions. Explanations, recommendations, rhetorical questions, and rewordings of an already-answered question do not add to the count. If a numbered item requests several independent answers, count each separately; grouping them under one heading does not bypass the cap. One question about layout cannot also count as one of the two required motion questions.
 
 A round includes every question in messages and tools before the user's next reply; the total must not exceed ten. A required minimum may span rounds when answers have dependencies. Prioritize questions by how their answers affect the design, and defer lower-priority questions to a later round. Do not split a large batch across tool calls to evade the limit or ask filler to reach a minimum. A question is useful when its answer clarifies a relevant decision or verifies a consequential interpretation of the brief.
 
@@ -24,28 +24,38 @@ After answers, briefly connect the user's needs to the next action and retain ma
 
 ## Make questions answerable
 
+Each question has exactly three substantive choices and a separate custom-answer path. Choose alternatives that differ in a relevant outcome, priority, scope, or condition. When only two obvious choices exist, derive a viable bounded combination or conditional approach from the actual task; do not invent project facts or an irrelevant third option. Accept the user's own answer or added constraints and resolve any conflict before dependent work.
+
 Use natural language to include the relevant elements below; do not dump every template field into the chat.
 
 1. Evidence: “The homepage has 12 projects; three demonstrate the primary service most clearly.”
-2. Decision: “Should visitors see selected projects first or immediately filter the full index?”
+2. Decision: “Which information architecture should the homepage use?”
 3. Recommendation and reason: “I recommend selected projects first so new visitors can understand the work.”
-4. Viable alternative and cost: “An index-first layout helps visitors with a specific goal, but needs stronger category labels.”
-5. Comparison: “Both versions use the same projects and images and work on mobile.”
+4. Three choices and costs: “A. Selected projects with a separate index: clearer introduction, with another step to find unfeatured work. B. Faceted index first: faster targeted browsing, with more category choices upfront. C. Selected projects followed by the full index on the same page: supports both paths, with a longer homepage.”
+5. Comparison: “All three use the same projects and images and work on mobile.”
 6. Boundary: “This chooses the homepage order, without changing detail-page content.”
 
-Avoid loaded pseudo-options such as “premium/basic” or “professional/playful.” Do not add an unsuitable third option to fill a quota. Allow a bounded combination or an additional constraint; explain and resolve conflicts before implementing it.
+Avoid loaded pseudo-options such as “premium/basic” or “professional/playful.” Keep all three options viable and explain their differences without declaring alternatives inferior. The custom-answer path is additional to A/B/C, not the third substantive choice.
+
+## Use native question tools
+
+Inspect the question capabilities actually exposed in the current session. Prefer Codex's or Claude Code's native structured user-question tool when it can present the required choices. Follow its current schema, mode restrictions, and per-call limits; do not invent a tool name or call a mode-restricted tool outside its supported mode.
+
+Supply three distinct options, with short labels and concise descriptions when supported. Mark the recommendation using the tool's supported convention, placing it first when expected. If the UI already provides custom/free-text input, use that entry and do not duplicate it as an option. If custom input must arrive in chat, explicitly invite a custom reply alongside the native question. A preselected recommendation is not a submitted answer.
+
+When a suitable native tool is unavailable or cannot preserve the format, write the question and A/B/C choices in text, explain their practical effects, mark the recommendation, and explicitly invite the user to add their own answer. If a tool's per-call question limit is lower than a checkpoint minimum, split the batch into permitted calls or successive rounds; keep the round's cumulative total at ten or fewer. Changing presentation does not waive question counts or the need to wait for answers.
 
 ## Use professional terms to expose the actual choice
 
 Write the following patterns in the user's language. Use the established local term first; retain an English term or API name only when it clarifies implementation. Briefly explain its visible or operational consequence. The user chooses the outcome and important tradeoff; the assistant owns routine parameter tuning within that choice.
 
-- Information architecture: “A. Selected-case landing with a secondary project index. It establishes the main story first; finding an unfeatured project adds a navigation step. B. Faceted project index. It exposes the whole collection immediately; categories and empty-result recovery need stronger design.”
-- Layout: “A. Asymmetric grid with a dominant content column. It establishes hierarchy through relative width. B. Equal-width modular grid. It supports peer-item comparison with less emphasis on any one item.” State actual columns, content, and mobile reflow in the comparison.
-- Typography: “A. Display/body role separation with a larger type-scale contrast. It makes headings more prominent but increases wrapping risk. B. A compact hierarchy with smaller size steps. It fits dense screens but needs clearer weight and spacing differences.” Show real text, including all supported scripts.
-- Interaction: “A. Inline disclosure. Context stays visible, but the page grows. B. Modal dialog. It isolates a short task, but requires intentional focus entry, containment, and restoration.” Do not recommend a modal only because it looks cleaner.
-- Motion: “A. Direct state change. Immediate access with minimal movement. B. Short spatial transition. It explains where the panel came from; it needs interruption, reversal, and reduced-motion behavior.” Show both at normal speed. Discuss duration, easing, and displacement as testable implementation parameters, not taste quizzes.
+- Information architecture: “A. Selected-case landing with a secondary project index. It establishes the main story first; finding an unfeatured project adds a navigation step. B. Faceted project index. It exposes the whole collection immediately; categories and empty-result recovery need stronger design. C. Selected cases followed by an index on the same page. It supports both entry paths but increases page length.”
+- Layout: “A. Asymmetric grid with a dominant content column. It establishes hierarchy through relative width. B. Equal-width modular grid. It supports peer-item comparison with less emphasis on any one item. C. Full-width editorial rows. They support sequential reading, with more scrolling and less side-by-side comparison.” State actual columns, content, and mobile reflow in the comparison.
+- Typography: “A. Display/body role separation with a larger type-scale contrast. It makes headings more prominent but increases wrapping risk. B. A compact hierarchy with smaller size steps. It fits dense screens but needs clearer weight and spacing differences. C. Editorial hierarchy with section labels and restrained display text. It supports sustained reading but gives the opening headline less prominence.” Show real text, including all supported scripts.
+- Interaction: “A. Inline disclosure. Context stays visible, but the page grows. B. Modal dialog. It isolates a short task, but requires intentional focus entry, containment, and restoration. C. A dedicated detail page. It provides room for a longer task but adds navigation and requires a clear return path.” Do not recommend a modal only because it looks cleaner.
+- Motion: “A. Direct state change. Immediate access with minimal movement. B. Short spatial transition. It explains where the panel came from; it needs interruption, reversal, and reduced-motion behavior. C. Motion selected by context. Frequent actions change directly while occasional orientation moments use a short transition; this needs clear, consistent trigger rules.” Show relevant behavior at normal speed. Discuss duration, easing, and displacement as testable implementation parameters, not taste quizzes.
 
-Compact question pattern: **Decision and evidence → A/B mechanisms and tradeoffs → recommendation → what this approves → next test.** For each question, include only the pieces needed to answer it; offer 2–3 viable options when they clarify a real choice. Select the batch using the checkpoint minimum and round cap. Mark recommendations without calling alternatives inferior by definition.
+Compact question pattern: **Decision and evidence → A/B/C mechanisms and tradeoffs → recommendation → custom-answer invitation → what this approves → next test.** For each question, include only the pieces needed to answer it and exactly three viable options. Select the batch using the checkpoint minimum and round cap. Mark recommendations without calling alternatives inferior by definition.
 
 For a substantial final plan, name information architecture, semantic tokens, type hierarchy, grid/gutters, responsive rules, component states, focus management, motion choreography, and acceptance tests accurately. Pair each consequential technical statement with a practical implication. For a narrow fix, name only the affected mechanisms. Use the [frontend specification](project-templates.md#frontend-specification); do not produce a vocabulary list in place of a design.
 
@@ -53,7 +63,7 @@ State the UI language and content-design rule in the plan, following the languag
 
 ## Write natural interface copy
 
-For new interfaces or substantial changes to voice, inspect the brief, audience, and existing copy first. When voice remains unsettled and not delegated, ask the user to compare two short versions of the same real heading, action, or status message, with a recommendation and the practical difference in tone. Include this in the relevant required checkpoint. Follow the skill's language priority; distinguish interface language from voice. “Use natural copy” guides quality but does not settle brand personality. After the choice, apply it across relevant labels and states; routine wording edits stay within the established voice and use the change-request checkpoint.
+For new interfaces or substantial changes to voice, inspect the brief, audience, and existing copy first. When voice remains unsettled and not delegated, ask the user to compare three short versions of the same real heading, action, or status message, with a recommendation and the practical differences in tone; also allow a custom rewrite. Include this in the relevant required checkpoint. Follow the skill's language priority; distinguish interface language from voice. “Use natural copy” guides quality but does not settle brand personality. After the choice, apply it across relevant labels and states; routine wording edits stay within the established voice and use the change-request checkpoint.
 
 Write text that belongs in the product and sounds natural to its audience. Avoid empty superlatives, generic promises, forced intimacy, poetic reassurance, and long courtesy formulas around simple actions. Keep implementation reports and explanations of the design process out of the interface. Explain access restrictions, consequences, and recovery steps where they help users act; preserve necessary consent, security, and legal information.
 
@@ -122,4 +132,4 @@ Each user-requested modification or fine-tuning starts with at least one useful 
 - Direction change: explain affected scope, effort, and concrete alternatives; reopen only relevant decisions.
 - New scope: clarify added pages, features, external services, or public targets before acting under the applicable authorization.
 
-If “make it more designed” remains vague, identify the current page's most consequential issue and propose two specific changes. If feedback conflicts, state the conflict directly, such as “make it denser” versus “give each project a full screen,” and ask which priority should govern this round.
+If “make it more designed” remains vague, identify the current page's most consequential issue and offer three viable approaches with their practical differences, plus a custom-answer path. If feedback conflicts, state the conflict directly, such as “make it denser” versus “give each project a full screen,” and frame three meaningful priority or conditional choices for the next round.

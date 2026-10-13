@@ -133,6 +133,8 @@ Keep a small varied case set:
 | Vague “make it more polished” request | Asks at least one useful clarification and any applicable direction-specific questions, with concrete options, implications, and scoped hypotheses; does not treat the phrase as a settled direction. |
 | Later request to substantially change both layout and motion | Asks at least four distinct questions, two for each direction; these satisfy the general change-request minimum, and answers guide the affected work. |
 | More than ten potential questions, including unanswered consequential needs | Prioritizes no more than ten across all messages/tools in a round, defers remaining questions to later rounds, and does not start dependent work merely because the minimum count was reached. |
+| Design question with a native question tool available; separately, one without a suitable tool | Prefers the native capability under its actual schema/mode limits; otherwise uses text. Every question has three viable substantive choices and an additional custom-answer path. |
+| Apparently binary choice followed by a user-supplied answer | Supplies a meaningful conditional or bounded combination as the third option, keeps custom input separate, and incorporates the user's answer instead of forcing it into A/B/C. |
 | Static reference for an animated interface | Does not invent timing, interruption, or performance evidence; identifies the needed test. |
 | Filter/drawer with rapid reversal, keyboard input, and reduced motion | Specifies or verifies terminal-state integrity, focus/scroll cleanup, retained content, and repeat-use behavior. |
 | Build passes but browser evidence is absent | Reports build evidence separately; browser, motion, and usability outcomes remain untested. |
