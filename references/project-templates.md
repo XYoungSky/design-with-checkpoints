@@ -123,13 +123,16 @@ Keep a small varied case set:
 
 | Case | Observable invariant to assess |
 | --- | --- |
-| Narrow mobile-navigation clipping fix with the design preserved | Uses the local-fix path; preserves direction; retests affected interaction and neighboring responsive states. |
+| Design a new interface from scratch with a vague brief or a detailed brief | Asks at least five useful questions before creating mockups/UI/code, uses known facts to avoid repetition, and waits until responses clarify material needs and ideas. |
+| Narrow mobile-navigation clipping fix with the design preserved | Asks at least one useful question about the requested result or relevant boundary; uses the local-fix path, preserves direction, and retests affected interaction and neighboring responsive states. |
 | “Review the checkout and recommend changes; do not edit it” or “Only give me a redesign plan” | Delivers findings or a plan with evidence limits; stops without implementation or release. |
-| “Choose a direction and implement it; ask only if scope changes” | Records the delegated choice and proceeds; does not insert routine direction approvals or broaden external-action permissions. |
+| “Choose a direction and implement it; ask only if scope changes” | Honors the user's explicit override of default question requirements, records the delegated choice, and proceeds without broadening external-action permissions. |
 | “Handle the details, but show me a working sample before expanding” | Builds and checks the sample, then waits at the explicitly requested review point before expansion. |
-| Adjust spacing and heading sizes within an approved design; separately, consider replacing primary navigation | Handles routine tuning with affected-layout checks and no dedicated experiment; surfaces an unresolved navigation tradeoff unless delegated. |
+| Adjust spacing and heading sizes within an approved design; separately, consider replacing primary navigation | Asks at least one useful question for the requested tweak, then handles routine parameters; a substantial navigation/layout change requires at least two layout questions before affected work. |
 | Daily-use console and editorial portfolio with their respective real tasks/content | Decisions differ for justified task needs; no universal palette, density, grid, or motion recipe. |
-| Vague “make it more polished” request | Surfaces consequential choices with 1–3 adaptive questions, concrete options, implications, and scoped hypotheses. |
+| Vague “make it more polished” request | Asks at least one useful clarification and any applicable direction-specific questions, with concrete options, implications, and scoped hypotheses; does not treat the phrase as a settled direction. |
+| Later request to substantially change both layout and motion | Asks at least four distinct questions, two for each direction; these satisfy the general change-request minimum, and answers guide the affected work. |
+| More than ten potential questions, including unanswered consequential needs | Prioritizes no more than ten across all messages/tools in a round, defers remaining questions to later rounds, and does not start dependent work merely because the minimum count was reached. |
 | Static reference for an animated interface | Does not invent timing, interruption, or performance evidence; identifies the needed test. |
 | Filter/drawer with rapid reversal, keyboard input, and reduced motion | Specifies or verifies terminal-state integrity, focus/scroll cleanup, retained content, and repeat-use behavior. |
 | Build passes but browser evidence is absent | Reports build evidence separately; browser, motion, and usability outcomes remain untested. |

@@ -7,10 +7,20 @@ Check existing answers first. Locate the current gap across goals, content prior
 - If the goal is unsettled, ask what visitors should accomplish before asking about colors.
 - If content priority is unsettled, identify a real conflict, such as whether case studies or articles should appear first.
 - If structure is unsettled, compare reading order, paths, and density before decoration.
-- If direction is approved, ask only about typography character, key layouts, or major interactions that could still change it.
-- If the solution is established, handle consistency and small fixes yourself rather than asking the user to choose every parameter.
+- If direction is approved, focus required questions on the requested result, preserved boundaries, and affected typography, layouts, or interactions; keep unrelated decisions settled.
+- If the solution is established, use the change-request question to clarify the intended result or a meaningful preservation/acceptance boundary, then handle consistency and routine parameters yourself.
 
-Ask only when an unresolved, non-delegated choice changes the next step. Usually ask 1–3 questions per round whose prerequisites are already available. If one answer changes the remaining options, ask that question alone first. Synthesize conflicting feedback before proposing the smallest new choice; a clear brief may need no questions.
+Apply the [required question checkpoints](../SKILL.md#keep-the-user-involved). For initial discovery, select at least five distinct, useful questions from the actual gaps in audience, primary task/outcome, content priority, language/voice, layout preferences, motion purpose, constraints, and acceptance. Use a detailed brief to explore relevant priorities, tradeoffs, or boundaries rather than repeating known facts. If one answer changes the remaining options, ask that question first, then continue until the checkpoint and understanding are complete. Synthesize conflicting feedback before proposing the next choice.
+
+## Count questions and control each round
+
+Count distinct, answerable questions actually posed to the user for the current stage or change request. Explanations, recommendations, rhetorical questions, and rewordings of an already-answered question do not add to the count. If a numbered item requests several independent answers, count each separately; grouping them under one heading does not bypass the cap. One question about layout cannot also count as one of the two required motion questions.
+
+A round includes every question in messages and tools before the user's next reply; the total must not exceed ten. A required minimum may span rounds when answers have dependencies. Prioritize questions by how their answers affect the design, and defer lower-priority questions to a later round. Do not split a large batch across tool calls to evade the limit or ask filler to reach a minimum. A question is useful when its answer clarifies a relevant decision or verifies a consequential interpretation of the brief.
+
+A substantial layout change alters information order, page structure, navigation, the main composition, or density enough to affect reading or task completion. A substantial motion change alters the purpose, intensity, choreography, scroll behavior, or repeated-use experience. Small spacing or timing corrections remain routine changes, but each user-requested tweak still requires at least one useful question. A request containing both substantial layout and motion changes requires four distinct questions, with two dedicated to each area; these also meet the general change-request minimum.
+
+After answers, briefly connect the user's needs to the next action and retain material unresolved questions. Do not begin dependent work while required responses or material understanding are missing. Counting questions is a guard against premature creation, not evidence that the needs are understood.
 
 ## Make questions answerable
 
@@ -35,7 +45,7 @@ Write the following patterns in the user's language. Use the established local t
 - Interaction: “A. Inline disclosure. Context stays visible, but the page grows. B. Modal dialog. It isolates a short task, but requires intentional focus entry, containment, and restoration.” Do not recommend a modal only because it looks cleaner.
 - Motion: “A. Direct state change. Immediate access with minimal movement. B. Short spatial transition. It explains where the panel came from; it needs interruption, reversal, and reduced-motion behavior.” Show both at normal speed. Discuss duration, easing, and displacement as testable implementation parameters, not taste quizzes.
 
-Compact question pattern: **Decision and evidence → A/B mechanisms and tradeoffs → recommendation → what this approves → next test.** Include only the pieces needed for the next answer, normally one short question with 2–3 viable options. Mark recommendations without calling alternatives inferior by definition.
+Compact question pattern: **Decision and evidence → A/B mechanisms and tradeoffs → recommendation → what this approves → next test.** For each question, include only the pieces needed to answer it; offer 2–3 viable options when they clarify a real choice. Select the batch using the checkpoint minimum and round cap. Mark recommendations without calling alternatives inferior by definition.
 
 For a substantial final plan, name information architecture, semantic tokens, type hierarchy, grid/gutters, responsive rules, component states, focus management, motion choreography, and acceptance tests accurately. Pair each consequential technical statement with a practical implication. For a narrow fix, name only the affected mechanisms. Use the [frontend specification](project-templates.md#frontend-specification); do not produce a vocabulary list in place of a design.
 
@@ -43,7 +53,7 @@ State the UI language and content-design rule in the plan, following the languag
 
 ## Write natural interface copy
 
-For new interfaces or substantial changes to voice, inspect the brief, audience, and existing copy first. When voice remains unsettled and not delegated, ask the user to compare two short versions of the same real heading, action, or status message, with a recommendation and the practical difference in tone. Follow the skill's language priority; distinguish interface language from voice. “Use natural copy” guides quality but does not settle brand personality. After the choice, apply it across relevant labels and states; routine wording edits within an established voice need no new question.
+For new interfaces or substantial changes to voice, inspect the brief, audience, and existing copy first. When voice remains unsettled and not delegated, ask the user to compare two short versions of the same real heading, action, or status message, with a recommendation and the practical difference in tone. Include this in the relevant required checkpoint. Follow the skill's language priority; distinguish interface language from voice. “Use natural copy” guides quality but does not settle brand personality. After the choice, apply it across relevant labels and states; routine wording edits stay within the established voice and use the change-request checkpoint.
 
 Write text that belongs in the product and sounds natural to its audience. Avoid empty superlatives, generic promises, forced intimacy, poetic reassurance, and long courtesy formulas around simple actions. Keep implementation reports and explanations of the design process out of the interface. Explain access restrictions, consequences, and recovery steps where they help users act; preserve necessary consent, security, and legal information.
 
@@ -82,9 +92,13 @@ Compare topic-led discovery with direct search/index access against actual readi
 
 Ask what evidence visitors need before acting. Use available material to compare case-study-first, product-explanation-first, or problem-and-promise-first structures. Explain their effects on comprehension and credibility. Never fill missing proof with invented statistics.
 
+### Important layout
+
+Before a substantial layout adjustment, ask at least two questions specific to that direction. Use real content to clarify, for example, which information or action should gain priority and which scanning, density, navigation, or mobile tradeoff matters most. Compare the practical effects of viable structures and recommend one; do not ask for a column count without explaining the experience. Preserve unrelated approved choices.
+
 ### Important motion
 
-Before implementing major motion, check existing guidance for purpose and intensity. When the direction is unsettled and not delegated, ask the user to compare direct feedback and a short spatial transition for the same operation; add a more narrative candidate only when useful. Describe or show the visible difference, explain frequency, perceived waiting, orientation, and mobile cost, and recommend a project-appropriate starting point. Ask about the experience, not a duration, easing curve, or library. Refine parameters through samples after the direction is settled. Do not equate more animation with better design.
+Before a substantial motion adjustment, ask at least two questions specific to that direction. Clarify the purpose of movement and the acceptable intensity or repeated-use cost using the same operation: direct feedback, a short spatial transition, or a more narrative candidate only when useful. Describe or show the visible difference, explain perceived waiting, orientation, and mobile impact, and recommend a project-appropriate starting point. For initial design, include unresolved motion needs in discovery. Ask about the experience, not a duration, easing curve, or library. Refine parameters through samples after the checkpoint is complete. Do not equate more animation with better design.
 
 ## Preserve decisions rather than complete chats
 
@@ -93,13 +107,15 @@ Preserve high-impact decisions in existing records or a concise handoff: the cho
 - “I like this font” records feedback on a font candidate, not approval of a sitewide redesign.
 - “Use A's structure and B's heading treatment” approves those specific parts; check compatibility.
 - “The preview is fine” may answer a clear acceptance request, but does not by itself grant new permission to publish.
-- “You decide the details” delegates details within approved scope. “Choose the direction and implement it” also delegates that direction choice; record the recommendation and proceed. Neither instruction expands the task's scope or external-action permissions.
+- “You decide the details” delegates details within approved scope. “Choose the direction and implement it” also delegates that direction choice; ask the required questions about needs, constraints, or acceptance, record the recommendation, then proceed. Delegation alone does not waive question counts; an explicit instruction such as “ask only if scope changes” does override the default question requirement. Neither instruction expands the task's scope or external-action permissions.
 
 Infer the user's desired involvement from their instructions; do not require a separate mode-selection question. A request to review a sample before expansion remains a checkpoint even when details are delegated. Reopen a settled choice only when new evidence materially changes its tradeoffs, and explain that change.
 
 Use simple statuses: pending choice, approved, awaiting validation, or superseded. Preserve the reason when one decision replaces another so discarded directions do not return unnoticed. Keep unanswered consequential questions pending; never treat a timeout as consent.
 
 ## Take the shortest feedback loop
+
+Each user-requested modification or fine-tuning starts with at least one useful question; substantial layout or motion changes use their respective two-question minima. Inspect and reproduce independently while waiting, then apply the shortest affected loop after the answers clarify the intended outcome. Do not restart initial discovery for a routine revision or ask again for parameters already delegated.
 
 - Implementation defect: repair against the approved version and retest without restarting the interview.
 - Local adjustment: combine related feedback into a comparable preview without requiring pixel-by-pixel approval.

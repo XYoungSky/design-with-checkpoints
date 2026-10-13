@@ -5,24 +5,36 @@ description: "Design, redesign, and review websites and frontend interfaces with
 
 # Design with Checkpoints
 
-Turn user goals into usable, distinctive, verifiable frontend designs. Own professional recommendations and implementation within scope; involve the user in unresolved consequential choices and honor explicit delegation.
+Turn user goals into usable, distinctive, verifiable frontend designs. Clarify needs through the required question checkpoints, own professional recommendations and implementation within scope, and honor explicit delegation.
 
 ## Route the task
 
 Read the request, project conventions, existing design decisions, and relevant code. Verify the target and discoverable facts yourself. Deliver the requested plan, review, or implementation: plans and reviews stop at recommendations and evidence limits unless implementation is requested.
 
-Default to inspecting the relevant interface, completing a verifiable batch, checking its effects, and using feedback to determine the next step. The stages below are optional tools, not a checklist. Enter research or prototyping when it resolves a material uncertainty or the user requests it. Scale depth by uncertainty, impact, and rework cost, not just page count.
+Default to inspecting the relevant interface, completing the required question checkpoint, completing a verifiable batch, checking its effects, and using feedback to determine the next step. Research, direction exploration, and prototyping are optional tools; the question requirements below are mandatory. Enter research or prototyping when it resolves a material uncertainty or the user requests it. Scale depth by uncertainty, impact, and rework cost, not just page count.
 
-For local fixes: reproduce → identify the affected layout/state/token → make the smallest authorized change → retest the affected path and nearby regressions → report. For new designs, establish goals, real content, and a coherent direction before expanding. Resume settled work without restarting discovery.
+For requested local fixes: reproduce → ask at least one useful clarification question and understand the response → identify the affected layout/state/token → make the smallest authorized change → retest the affected path and nearby regressions → report. For new designs, complete initial discovery before creating the interface. Resume settled work without restarting discovery, while meeting the checkpoint for each new change request.
 
 Read only relevant reference sections at their point of use. Routine work can follow this entrypoint; reference examples and templates do not add deliverables to the user's request.
 
 ## Keep the user involved
 
-- Ask only about unresolved, non-delegated choices that materially affect goals, content priority, direction, core interaction, scope, or rework. Usually ask 1–3 questions, with concrete evidence, a recommendation, viable alternatives, and their tradeoffs. Resolve dependent choices in order.
-- For new interfaces and substantial redesigns, explicitly check UI language/voice and motion purpose/intensity before committing direction. If either direction is unsettled and not delegated, you must ask a focused [copy](references/interview-and-decisions.md#write-natural-interface-copy) or [motion](references/interview-and-decisions.md#important-motion) question before dependent work. Generic requests such as “modern” or “polished” do not settle these choices. When settled or delegated, briefly state the adopted direction and its basis in the proposal or update. Local fixes preserving both need no new checkpoint.
-- Existing decisions and explicit delegation satisfy the relevant checkpoint. Keep consequential choices visible and preserve any review point the user requested. Silence is not approval; liking a reference is not approval of an entire redesign.
-- Wait before work that depends on an unanswered consequential choice. Continue independent authorized work. Handle spacing, type sizes, timing, and other details within the chosen direction; reopen only decisions affected by new evidence or scope.
+Complete these question checkpoints before the affected design or implementation:
+
+| Trigger | Minimum useful questions to the user |
+| --- | --- |
+| Design an interface from scratch | 5 during initial discovery, before creating mockups, UI, or frontend code |
+| Later substantially change layout | 2 specifically about layout direction |
+| Later substantially change motion | 2 specifically about motion direction |
+| Each user request to modify or fine-tune the design | 1 about the intended result, priority, preserved boundary, or acceptance condition |
+
+When a later change substantially affects both layout and motion, ask at least 4 questions: 2 for each area. Those questions also satisfy the change-request minimum; do not add a redundant fifth question. Ask no more than 10 questions per round, counting all messages and question tools before the user's next reply. Meet a stage's minimum across multiple rounds when dependencies require it. Use [counting and round guidance](references/interview-and-decisions.md#count-questions-and-control-each-round).
+
+- Read the brief, existing decisions, real content, and discoverable project facts first. Choose questions that clarify needs, preferences, constraints, or meaningful tradeoffs. A detailed brief, a small task, or plausible defaults do not waive the minimum; use known facts to ask informed questions instead of repeating them. Never pad the count with redundant, rhetorical, unrelated, or purely technical questions.
+- For new interfaces and substantial redesigns, explicitly check UI language/voice and motion purpose/intensity. Include unsettled directions in the required questions, using [copy](references/interview-and-decisions.md#write-natural-interface-copy), [layout](references/interview-and-decisions.md#important-layout), or [motion](references/interview-and-decisions.md#important-motion) comparisons. Generic requests such as “modern” or “polished” do not settle these choices.
+- Existing decisions and delegation guide what to ask and preserve, but do not by themselves replace the required questions. Honor an explicit user instruction that changes or waives the question requirements. Keep consequential choices visible and preserve any requested review point. Silence is not approval; liking a reference is not approval of an entire redesign.
+- Wait for answers and summarize the intended outcome, priorities, constraints, and chosen or preserved direction at an appropriate scale. Meeting the count alone is insufficient: if material needs or ideas remain unclear, ask focused follow-ups in another round before dependent work. For design from scratch, do not start creating mockups, UI, or frontend code before initial discovery is complete. Continue independent read-only inspection or research while waiting.
+- After the relevant checkpoint, handle spacing, type sizes, timing, and other routine parameters within the chosen direction. Repairs found during that agreed implementation do not trigger a new question quota unless they substantially change layout or motion, or the user makes a new change request.
 - For difficult tradeoffs, use [answerable questions](references/interview-and-decisions.md#make-questions-answerable) and [decision boundaries](references/interview-and-decisions.md#preserve-decisions-rather-than-complete-chats). Do not ask the user to choose technical parameters without explaining their effect.
 
 ## Preserve design quality
@@ -37,7 +49,7 @@ Distinguish observed behavior, source inference, design judgment, and unverified
 
 Before changing an existing interface, inspect the affected pages and states in a real browser when available. Broaden to representative templates and paths for shared or sitewide changes. Capture enough version, viewport, and interaction evidence to reproduce findings. Use source code to understand ownership and constraints. Without browser access, continue permitted checks and explicitly leave rendered behavior unverified.
 
-Identify what to preserve, the highest-impact problems, and the intended outcome. Establish relevant acceptance criteria before implementation; do not lower them afterward to conceal failures. For broad audits, consult [audit coverage](references/reference-evidence.md#audit-the-project-before-collecting-inspiration). Reuse existing briefs; clarify only unsettled goals or constraints.
+Identify what to preserve, the highest-impact problems, and the intended outcome. Establish relevant acceptance criteria before implementation; do not lower them afterward to conceal failures. For broad audits, consult [audit coverage](references/reference-evidence.md#audit-the-project-before-collecting-inspiration). Reuse existing briefs to make required questions specific; preserve settled facts and choices.
 
 ## Research and propose directions
 
