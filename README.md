@@ -2,9 +2,7 @@
 
 [English](#design-with-checkpoints) · [简体中文](#简体中文)
 
-A frontend design skill that guides research, direction selection, prototyping, implementation, and verification, with user input at key decisions.
-
-Use it for new websites, redesigns, interface reviews, and focused improvements. The workflow scales to the task and follows the project's existing stack and design conventions.
+Design with Checkpoints is a frontend design skill for building websites, redesigning interfaces, and reviewing existing designs. It involves you in key decisions through focused questions and sample reviews, then guides implementation and testing in stages.
 
 ## Installation
 
@@ -18,8 +16,6 @@ npx skills@latest add XYoungSky/design-with-checkpoints --skill design-with-chec
 
 Select your target agent in the installer. Add `--global` to install across projects, or `--agent codex` / `--agent claude-code` to choose an agent directly. See the [skills CLI documentation](https://github.com/vercel-labs/skills#install-a-skill) for other supported agents and options.
 
-The CLI installs only the contents of `skills/design-with-checkpoints/`. Files outside that folder are not copied into the installed skill.
-
 ### Manual installation
 
 Download and extract the repository, then copy the `skills/design-with-checkpoints/` folder to one of these locations:
@@ -29,7 +25,7 @@ Download and extract the repository, then copy the `skills/design-with-checkpoin
 | [Codex](https://developers.openai.com/codex/skills#where-to-save-skills) | `.agents/skills/design-with-checkpoints/` | `~/.agents/skills/design-with-checkpoints/` |
 | [Claude Code](https://code.claude.com/docs/en/skills#choose-where-skills-load) | `.claude/skills/design-with-checkpoints/` | `~/.claude/skills/design-with-checkpoints/` |
 
-Keep `SKILL.md`, `references/`, `agents/`, and `LICENSE` together, with `SKILL.md` directly inside the installed folder. No build step is required. Open or reload your agent and confirm the skill is available.
+Keep `SKILL.md`, `references/`, `agents/`, and `LICENSE` together, with `SKILL.md` directly inside the installed folder. Open or reload your agent to load the skill.
 
 ## Quick start
 
@@ -49,43 +45,21 @@ In Claude Code:
 
 In other tools, select the skill using the tool's skill picker or ask an agent with local file access to read `/path/to/design-with-checkpoints/SKILL.md`, replacing the path with its actual location.
 
-Preview, testing, and deployment capabilities come from your agent and project tools.
-
-## When to use it
+## Use cases
 
 | Task | Approach |
 | --- | --- |
-| New website | Establish goals, content, and direction; test uncertain choices and build incrementally |
-| Redesign | Audit the existing interface, identify what to preserve, and propose improvements |
-| Plan or review only | Deliver recommendations, supporting evidence, and open checks; stop there |
-| Focused fix | Reproduce, change, and retest while preserving the existing direction |
+| New website | Establish goals, content, and design direction, then build in stages |
+| Redesign | Inspect the interface, preserve effective design, and address the main problems |
+| Plan or review | Analyze problems, recommend design changes, and outline validation |
+| Focused improvement | Identify and fix a specific issue, then retest related functionality |
 
-## How collaboration works
+## Key Features
 
-Inspect the relevant interface, complete a verifiable batch, check its effects, and use feedback to guide the next step. Research, comparisons, prototypes, and separate specifications are used when the task needs them.
-
-- **Ask at meaningful decisions.** Discuss navigation, core flows, or changes in direction. Handle spacing, type sizes, and similar details within the chosen direction.
-- **Respect delegation.** Let the agent choose a direction, or ask to review a sample first. Preserve settled decisions and revisit them only when relevant conditions change.
-- **Verify the result.** Check real content, responsive layouts, interactions, and accessibility. Distinguish verified results from untested behavior.
-- **Follow the project.** UI language follows your explicit instructions, then project language and audience requirements, with the conversation language as a fallback.
-
-Set your preferred involvement in ordinary language:
-
-```text
-Show me two distinct directions. Start implementation after I choose one.
-```
-
-```text
-Keep the current design. Choose the details yourself;
-ask me only if the scope changes.
-```
-
-```text
-Build the homepage's first screen and a mobile sample.
-Wait for my review before expanding to the rest of the site.
-```
-
-Delivery explains what changed, what was tested, and what remains unverified. Publishing follows existing authorization and the tool's permission requirements.
+- **Focused checkpoints.** Discuss direction and key details using concrete options tied to the interface.
+- **Sample reviews.** Review representative layouts and interactions before extending them across the site.
+- **Project continuity.** Work with the existing stack, design conventions, and agreed decisions.
+- **Practical verification.** Check responsive layouts, interactions, and accessibility, and document the results.
 
 ## Files
 
@@ -94,7 +68,7 @@ Delivery explains what changed, what was tested, and what remains unverified. Pu
 - [Reference evidence](skills/design-with-checkpoints/references/reference-evidence.md): research, prototype comparisons, and evidence quality.
 - [Motion and QA](skills/design-with-checkpoints/references/motion-and-qa.md): interaction, responsive behavior, accessibility, and performance checks.
 - [Project templates](skills/design-with-checkpoints/references/project-templates.md): briefs, specifications, handoffs, and regression scenarios.
-- [Sources and evidence limits](skills/design-with-checkpoints/references/sources.md): method sources and their applicability.
+- [Sources](skills/design-with-checkpoints/references/sources.md): background and references for the workflow.
 
 ## License
 
@@ -102,9 +76,7 @@ Licensed under the [MIT License](LICENSE).
 
 ## 简体中文
 
-一个面向前端设计的 skill，涵盖调研、方向选择、原型、实现与验证，让用户参与关键决策。
-
-适用于网站新建、改版、界面审查和局部优化。根据任务大小调整流程，沿用项目已有的技术栈和设计约定。
+Design with Checkpoints 是一个用于网站新建、界面改版和设计审查的前端设计 skill。它通过具体提问和样例审阅，让你参与关键设计决策，再分阶段推进实现与测试。
 
 ### 安装
 
@@ -118,8 +90,6 @@ npx skills@latest add XYoungSky/design-with-checkpoints --skill design-with-chec
 
 按提示选择目标 agent。添加 `--global` 可跨项目使用；添加 `--agent codex` 或 `--agent claude-code` 可直接指定 agent。其他支持的工具与选项见 [skills CLI 文档](https://github.com/vercel-labs/skills#install-a-skill)。
 
-CLI 只会把 `skills/design-with-checkpoints/` 中的内容复制到安装后的 skill 目录，该文件夹之外的文件不会被复制进去。
-
 #### 手动安装
 
 下载并解压仓库，将其中的 `skills/design-with-checkpoints/` 文件夹复制到以下一个位置：
@@ -129,7 +99,7 @@ CLI 只会把 `skills/design-with-checkpoints/` 中的内容复制到安装后�
 | [Codex](https://developers.openai.com/codex/skills#where-to-save-skills) | `.agents/skills/design-with-checkpoints/` | `~/.agents/skills/design-with-checkpoints/` |
 | [Claude Code](https://code.claude.com/docs/en/skills#choose-where-skills-load) | `.claude/skills/design-with-checkpoints/` | `~/.claude/skills/design-with-checkpoints/` |
 
-完整保留 `SKILL.md`、`references/`、`agents/` 和 `LICENSE`，确保 `SKILL.md` 直接位于安装后的文件夹中。无需构建。打开或重新加载 agent，确认它能识别此 skill。
+保留文件夹内的 `SKILL.md`、`references/`、`agents/` 和 `LICENSE`，将 `SKILL.md` 放在该文件夹根目录。随后打开或重新加载 agent。
 
 ### 快速开始
 
@@ -148,50 +118,30 @@ $design-with-checkpoints 改进当前网站。
 
 在其他工具中，通过技能选择器选中此 skill；也可以让具备本地文件访问能力的 agent 读取 `/path/to/design-with-checkpoints/SKILL.md`，将路径替换为实际位置。
 
-实际预览、测试和发布能力由所用 agent 与项目工具提供。
-
-### 适合哪些任务
+### 适用场景
 
 | 任务 | 工作方式 |
 | --- | --- |
-| 新建网站 | 明确目标、内容与方向，验证不确定的选择后逐步实现 |
-| 改版现有页面 | 先审查，识别值得保留的设计，再提出改进 |
-| 只要方案或审查 | 交付建议、依据和待验证项，到此结束 |
-| 局部修复 | 定位问题、修改、复测，保持已有方向 |
+| 新建网站 | 明确目标、内容与设计方向，逐步完成实现 |
+| 界面改版 | 检查现有界面，保留有效设计，改善主要问题 |
+| 方案与审查 | 分析问题，提供设计建议和验证思路 |
+| 局部优化 | 定位并修改具体问题，复测相关功能 |
 
-### 如何协作
+### 核心特点
 
-检查相关界面，完成一批可验证的工作，检查影响，再根据反馈决定下一步。调研、方案比较、原型和独立规格文档按任务需要使用。
-
-- **关键选择再提问。** 导航结构、核心流程或方向变化需要讨论；已选方向内的间距、字号等细节通常直接处理。
-- **尊重你的委托。** 可以让 agent 自行选择方向，也可以指定“先给我看样例”。已有决定会被保留，只有相关条件变化时才重新讨论。
-- **用结果验证。** 检查真实内容、响应式布局、交互和可访问性；区分已验证结果与待验证内容。
-- **保持项目一致性。** 界面语言优先遵循你的指定，其次是项目语言与受众要求，最后才以聊天语言作为默认值。
-
-你可以这样约定参与方式：
-
-```text
-先给我两个有明显区别的方向，我选定后再实现。
-```
-
-```text
-沿用当前设计，细节由你决定；只有范围变化时再问我。
-```
-
-```text
-先完成首页第一屏和移动端样例，等我确认后再扩展。
-```
-
-交付会说明改了什么、验证了什么，以及尚未确认的部分。发布遵循已有授权和当前工具的权限要求。
+- **关键决策提问。** 结合实际界面提供具体选项，讨论设计方向和关键细节。
+- **阶段样例审阅。** 通过典型布局和交互样例确认效果，再扩展到整个网站。
+- **保持项目一致性。** 沿用现有技术栈、设计约定和已确定的决策。
+- **实际效果验证。** 检查响应式布局、交互和可访问性，并记录测试结果。
 
 ### 文件导航
 
-- [SKILL.md](skills/design-with-checkpoints/SKILL.md)：agent 的入口规则与工作流程。
-- [提问与决策](skills/design-with-checkpoints/references/interview-and-decisions.md)：如何提出选项、记录选择和处理反馈。
-- [参考与证据](skills/design-with-checkpoints/references/reference-evidence.md)：如何研究案例、比较原型和判断证据。
+- [SKILL.md](skills/design-with-checkpoints/SKILL.md)：技能说明与工作流程。
+- [提问与决策](skills/design-with-checkpoints/references/interview-and-decisions.md)：设计选项、决策记录与反馈处理。
+- [参考与证据](skills/design-with-checkpoints/references/reference-evidence.md)：案例研究、原型比较与证据评估。
 - [动效与质量检查](skills/design-with-checkpoints/references/motion-and-qa.md)：交互、响应式、可访问性与性能检查。
 - [项目模板](skills/design-with-checkpoints/references/project-templates.md)：简报、设计规格、交付记录和回归场景。
-- [来源与适用边界](skills/design-with-checkpoints/references/sources.md)：方法来源及其使用限制。
+- [参考来源](skills/design-with-checkpoints/references/sources.md)：工作方法的背景与参考资料。
 
 ### 许可证
 

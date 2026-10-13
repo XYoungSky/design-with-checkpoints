@@ -4,46 +4,61 @@
 
 Check existing answers first. Locate the current gap across goals, content priorities, information architecture, visual/interaction direction, prototypes, and acceptance. Revisit assumptions when new evidence warrants it; do not turn stages into one-way formalities.
 
-- If the goal is unsettled, ask what visitors should accomplish before asking about colors.
+- If the goal is unsettled, use the actual visitor scenario to compare concrete first actions, such as finding a project, comparing a service, or booking a consultation, before asking about colors.
 - If content priority is unsettled, identify a real conflict, such as whether case studies or articles should appear first.
 - If structure is unsettled, compare reading order, paths, and density before decoration.
 - If direction is approved, focus required questions on the requested result, preserved boundaries, and affected typography, layouts, or interactions; keep unrelated decisions settled.
-- If the solution is established, use the change-request question to clarify the intended result or a meaningful preservation/acceptance boundary, then handle consistency and routine parameters yourself.
+- If the solution is established, make the direction and key-detail questions specific to its intended result, preservation boundaries, or acceptance conditions, then handle routine parameters within those answers.
 
-Apply the [required question checkpoints](../SKILL.md#keep-the-user-involved). For initial discovery, select at least five distinct, useful questions from the actual gaps in audience, primary task/outcome, content priority, language/voice, layout preferences, motion purpose, constraints, and acceptance. Use a detailed brief to explore relevant priorities, tradeoffs, or boundaries rather than repeating known facts. If one answer changes the remaining options, ask that question first, then continue until the checkpoint and understanding are complete. Synthesize conflicting feedback before proposing the next choice.
+Apply the [required question checkpoints and full-delegation exception](../SKILL.md#keep-the-user-involved). In initial discovery, cover actual gaps in audience, primary task/outcome, content priority, language/voice, layout, motion, key details, constraints, and acceptance. Use a detailed brief to explore implications without repeating known facts. Ask prerequisite questions first and synthesize conflicting feedback before proposing the next choice.
+
+## Clarify direction and key design details
+
+Use the [change-request checkpoint](../SKILL.md#keep-the-user-involved): direction sets the desired outcome; key details determine how users experience it. Cover remaining consequential detail choices using the existing interface and content.
+
+Key details can include which content gets emphasis, how long titles are shown, what remains visible on mobile, which component states need feedback, how errors are recovered, and when motion occurs during repeated use. Ask about the visible behavior and its tradeoffs. Routine pixel values, library choices, and tuning follow the settled decisions. Preserve explicit answers and delegated details; use the questions to resolve actual remaining choices, constraints, or acceptance conditions.
 
 ## Count questions and control each round
 
-Count distinct, answerable questions actually posed to the user for the current stage or change request. The three choices and custom-answer entry belong to one question, not four questions. Explanations, recommendations, rhetorical questions, and rewordings of an already-answered question do not add to the count. If a numbered item requests several independent answers, count each separately; grouping them under one heading does not bypass the cap. One question about layout cannot also count as one of the two required motion questions.
+Count questions actually posed to the user for the current stage or change request. The minimum counts distinct, answerable decisions; repeated or reworded questions consume the upper limit without helping meet the minimum. Options and the custom-answer entry belong to one question; they do not count separately. Explanations and recommendations do not count as questions. If a numbered item requests several independent answers, count each separately; grouping them under one heading does not bypass the cap. Direction and key-detail questions must be distinct. A question can meet the general change requirement and the corresponding layout or motion requirement; one layout question cannot also count as a motion question.
 
-A round includes every question in messages and tools before the user's next reply; the total must not exceed ten. A required minimum may span rounds when answers have dependencies. Prioritize questions by how their answers affect the design, and defer lower-priority questions to a later round. Do not split a large batch across tool calls to evade the limit or ask filler to reach a minimum. A question is useful when its answer clarifies a relevant decision or verifies a consequential interpretation of the brief.
+Use the round and initial-discovery caps in [the checkpoint rules](../SKILL.md#keep-the-user-involved). Split dependent questions across rounds; do not split tools or restart discovery to reset the count. Repeated questions and follow-ups consume the applicable cap. Do not add filler to reach the minimum.
 
-A substantial layout change alters information order, page structure, navigation, the main composition, or density enough to affect reading or task completion. A substantial motion change alters the purpose, intensity, choreography, scroll behavior, or repeated-use experience. Small spacing or timing corrections remain routine changes, but each user-requested tweak still requires at least one useful question. A request containing both substantial layout and motion changes requires four distinct questions, with two dedicated to each area; these also meet the general change-request minimum.
+A substantial layout change alters information order, page structure, navigation, the main composition, or density enough to affect reading or task completion. A substantial motion change alters purpose, intensity, choreography, scroll behavior, or repeated-use experience. Apply the corresponding minima in [the checkpoint rules](../SKILL.md#keep-the-user-involved), including separate direction and detail questions for both areas when both change.
 
 After answers, briefly connect the user's needs to the next action and retain material unresolved questions. Do not begin dependent work while required responses or material understanding are missing. Counting questions is a guard against premature creation, not evidence that the needs are understood.
 
 ## Make questions answerable
 
-Each question has exactly three substantive choices and a separate custom-answer path. Choose alternatives that differ in a relevant outcome, priority, scope, or condition. When only two obvious choices exist, derive a viable bounded combination or conditional approach from the actual task; do not invent project facts or an irrelevant third option. Accept the user's own answer or added constraints and resolve any conflict before dependent work.
+Check every question before presenting it: name the actual task, page, element, content, or state; identify one unresolved decision; and explain how its answers affect the next requirement, design choice, implementation, or acceptance check. Ground it in the brief or observed interface. When facts are missing, ask about specific relevant scenarios rather than inventing evidence. Reject broad prompts such as “What style do you like?” or “What should we improve?” and questions whose answers would leave the next step unchanged.
+
+Use the [question-format rule](../SKILL.md#keep-the-user-involved): prefer choices for design tradeoffs, retain two for binary decisions, and allow direct input for facts. Alternatives should differ in a relevant outcome, priority, scope, or condition. Accept custom answers and added constraints; resolve conflicts before dependent work.
+
+Examples of grounding a question; verify the scenario and provide the full options, effects, recommendation, and custom-answer path when presenting it:
+
+| Avoid | Specific decision to resolve |
+| --- | --- |
+| “What style do you like?” | For a service homepage with supplied case studies, compare opening with a representative case, service and booking information, or a short introduction followed by case previews; explain the visitor's first action in each. |
+| “How should we improve the cards?” | For a mobile project list with clipped titles, compare full-title wrapping, a summary linked to the full title, or an expandable title; explain reading completeness, list density, and extra interaction. |
 
 Use natural language to include the relevant elements below; do not dump every template field into the chat.
 
 1. Evidence: “The homepage has 12 projects; three demonstrate the primary service most clearly.”
-2. Decision: “Which information architecture should the homepage use?”
+2. Decision: “How should the homepage order the three selected projects and the full 12-project index for new visitors?”
 3. Recommendation and reason: “I recommend selected projects first so new visitors can understand the work.”
 4. Three choices and costs: “A. Selected projects with a separate index: clearer introduction, with another step to find unfeatured work. B. Faceted index first: faster targeted browsing, with more category choices upfront. C. Selected projects followed by the full index on the same page: supports both paths, with a longer homepage.”
 5. Comparison: “All three use the same projects and images and work on mobile.”
 6. Boundary: “This chooses the homepage order, without changing detail-page content.”
 
-Avoid loaded pseudo-options such as “premium/basic” or “professional/playful.” Keep all three options viable and explain their differences without declaring alternatives inferior. The custom-answer path is additional to A/B/C, not the third substantive choice.
+Avoid loaded pseudo-options such as “premium/basic” or “professional/playful.” Keep all options viable and explain their differences without declaring alternatives inferior. The custom-answer path is separate from the substantive options.
 
 ## Use native question tools
 
 Inspect the question capabilities actually exposed in the current session. Prefer Codex's or Claude Code's native structured user-question tool when it can present the required choices. Follow its current schema, mode restrictions, and per-call limits; do not invent a tool name or call a mode-restricted tool outside its supported mode.
 
-Supply three distinct options, with short labels and concise descriptions when supported. Mark the recommendation using the tool's supported convention, placing it first when expected. If the UI already provides custom/free-text input, use that entry and do not duplicate it as an option. If custom input must arrive in chat, explicitly invite a custom reply alongside the native question. A preselected recommendation is not a submitted answer.
+Supply options or direct factual input according to the question-format rule, with short labels and concise descriptions when supported. For design choices, mark the recommendation using the tool's supported convention, placing it first when expected. If the UI already provides custom/free-text input, use that entry and do not duplicate it as an option. If custom input must arrive in chat, explicitly invite a custom reply alongside the native question. A preselected recommendation is not a submitted answer.
 
-When a suitable native tool is unavailable or cannot preserve the format, write the question and A/B/C choices in text, explain their practical effects, mark the recommendation, and explicitly invite the user to add their own answer. If a tool's per-call question limit is lower than a checkpoint minimum, split the batch into permitted calls or successive rounds; keep the round's cumulative total at ten or fewer. Changing presentation does not waive question counts or the need to wait for answers.
+When a suitable native tool is unavailable or cannot preserve the format, present the appropriate choices or factual input in text. For choices, explain their effects, recommend a design option, and invite a custom answer. If a tool's per-call question limit is lower than a checkpoint minimum, split the batch into permitted calls or successive rounds. Respect the checkpoint caps across calls and rounds. Changing presentation does not waive question quality, counts, or the need to wait for answers.
 
 ## Use professional terms to expose the actual choice
 
@@ -55,11 +70,19 @@ Write the following patterns in the user's language. Use the established local t
 - Interaction: “A. Inline disclosure. Context stays visible, but the page grows. B. Modal dialog. It isolates a short task, but requires intentional focus entry, containment, and restoration. C. A dedicated detail page. It provides room for a longer task but adds navigation and requires a clear return path.” Do not recommend a modal only because it looks cleaner.
 - Motion: “A. Direct state change. Immediate access with minimal movement. B. Short spatial transition. It explains where the panel came from; it needs interruption, reversal, and reduced-motion behavior. C. Motion selected by context. Frequent actions change directly while occasional orientation moments use a short transition; this needs clear, consistent trigger rules.” Show relevant behavior at normal speed. Discuss duration, easing, and displacement as testable implementation parameters, not taste quizzes.
 
-Compact question pattern: **Decision and evidence → A/B/C mechanisms and tradeoffs → recommendation → custom-answer invitation → what this approves → next test.** For each question, include only the pieces needed to answer it and exactly three viable options. Select the batch using the checkpoint minimum and round cap. Mark recommendations without calling alternatives inferior by definition.
+Compact question pattern: **Decision and evidence → A/B/C mechanisms and tradeoffs → recommendation → custom-answer invitation → what this approves → next test.** Include only the pieces needed to answer; adapt the options to binary decisions and use direct input for facts when appropriate. Select the batch using the checkpoint minimum and round cap. Mark recommendations without calling alternatives inferior by definition.
 
 For a substantial final plan, name information architecture, semantic tokens, type hierarchy, grid/gutters, responsive rules, component states, focus management, motion choreography, and acceptance tests accurately. Pair each consequential technical statement with a practical implication. For a narrow fix, name only the affected mechanisms. Use the [frontend specification](project-templates.md#frontend-specification); do not produce a vocabulary list in place of a design.
 
 State the UI language and content-design rule in the plan, following the language priority in [the skill](../SKILL.md). The discussion language may differ from the interface language. Preserve established localization and protected copy. Describe design tradeoffs precisely in specifications; write interface text for its audience, with clear actions, useful recovery messages, and necessary context at the point of use.
+
+## Write clear user-facing output
+
+Apply the skill's [clear-output rule](../SKILL.md#write-clear-user-facing-output) to documents and conversation as well as interface text.
+
+- Lead with the fact, result, recommendation, or action. Remove preemptive self-justification and unprompted contrasts or denials that do not help the reader understand or act.
+- Keep qualifications only when they affect accuracy, a decision, or the next action. State concrete conditions once, near the relevant claim, and separate independent conditions into readable sentences. Preserve actual uncertainty, access restrictions, meaningful consequences, and required information.
+- Replace buzzwords and internal shorthand with familiar words. When precision requires a technical term or abbreviation, explain its meaning or practical effect on first use unless it is already established for that audience.
 
 ## Write natural interface copy
 
@@ -104,11 +127,11 @@ Ask what evidence visitors need before acting. Use available material to compare
 
 ### Important layout
 
-Before a substantial layout adjustment, ask at least two questions specific to that direction. Use real content to clarify, for example, which information or action should gain priority and which scanning, density, navigation, or mobile tradeoff matters most. Compare the practical effects of viable structures and recommend one; do not ask for a column count without explaining the experience. Preserve unrelated approved choices.
+Before a substantial layout adjustment, ask at least two questions: one about layout direction and one about a key affected detail. Use real content to clarify, for example, which information or action should gain priority, then how long titles, card density, navigation, or mobile reordering should behave. Compare the practical effects of viable structures and recommend one; do not ask for a column count without explaining the experience. Preserve unrelated approved choices.
 
 ### Important motion
 
-Before a substantial motion adjustment, ask at least two questions specific to that direction. Clarify the purpose of movement and the acceptable intensity or repeated-use cost using the same operation: direct feedback, a short spatial transition, or a more narrative candidate only when useful. Describe or show the visible difference, explain perceived waiting, orientation, and mobile impact, and recommend a project-appropriate starting point. For initial design, include unresolved motion needs in discovery. Ask about the experience, not a duration, easing curve, or library. Refine parameters through samples after the checkpoint is complete. Do not equate more animation with better design.
+Before a substantial motion adjustment, ask at least two questions: one about motion direction and one about a key affected detail. Clarify the purpose of movement using the same operation: direct feedback, a short spatial transition, or a more narrative candidate only when useful. Then resolve a concrete detail such as which repeated actions animate or when the control becomes usable during the transition. Describe or show the visible difference, explain perceived waiting, orientation, and mobile impact, and recommend a project-appropriate starting point. For initial design, include unresolved motion needs in discovery. Ask about the experience, not a duration, easing curve, or library. Refine parameters through samples after the checkpoint is complete. Do not equate more animation with better design.
 
 ## Preserve decisions rather than complete chats
 
@@ -117,7 +140,7 @@ Preserve high-impact decisions in existing records or a concise handoff: the cho
 - “I like this font” records feedback on a font candidate, not approval of a sitewide redesign.
 - “Use A's structure and B's heading treatment” approves those specific parts; check compatibility.
 - “The preview is fine” may answer a clear acceptance request, but does not by itself grant new permission to publish.
-- “You decide the details” delegates details within approved scope. “Choose the direction and implement it” also delegates that direction choice; ask the required questions about needs, constraints, or acceptance, record the recommendation, then proceed. Delegation alone does not waive question counts; an explicit instruction such as “ask only if scope changes” does override the default question requirement. Neither instruction expands the task's scope or external-action permissions.
+- “You decide the details” delegates details; “Choose the direction and implement it” delegates direction and implementation. Neither alone delegates the entire design task or waives question counts. “I delegate the entire design and implementation to AI; make all design decisions” explicitly grants full delegation and activates the [checkpoint exception](../SKILL.md#keep-the-user-involved). Record its scope. No design delegation expands external-action permissions.
 
 Infer the user's desired involvement from their instructions; do not require a separate mode-selection question. A request to review a sample before expansion remains a checkpoint even when details are delegated. Reopen a settled choice only when new evidence materially changes its tradeoffs, and explain that change.
 
@@ -125,7 +148,7 @@ Use simple statuses: pending choice, approved, awaiting validation, or supersede
 
 ## Take the shortest feedback loop
 
-Each user-requested modification or fine-tuning starts with at least one useful question; substantial layout or motion changes use their respective two-question minima. Inspect and reproduce independently while waiting, then apply the shortest affected loop after the answers clarify the intended outcome. Do not restart initial discovery for a routine revision or ask again for parameters already delegated.
+Apply the [change-request checkpoint and its exception](../SKILL.md#keep-the-user-involved). Inspect and reproduce independently while waiting, then take the shortest affected loop once the required answers clarify direction and key details. Do not restart initial discovery for a routine revision or ask again for parameters already delegated.
 
 - Implementation defect: repair against the approved version and retest without restarting the interview.
 - Local adjustment: combine related feedback into a comparable preview without requiring pixel-by-pixel approval.
