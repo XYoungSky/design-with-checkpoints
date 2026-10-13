@@ -43,6 +43,8 @@ State the UI language and content-design rule in the plan, following the languag
 
 ## Write natural interface copy
 
+For new interfaces or substantial changes to voice, inspect the brief, audience, and existing copy first. When voice remains unsettled and not delegated, ask the user to compare two short versions of the same real heading, action, or status message, with a recommendation and the practical difference in tone. Follow the skill's language priority; distinguish interface language from voice. “Use natural copy” guides quality but does not settle brand personality. After the choice, apply it across relevant labels and states; routine wording edits within an established voice need no new question.
+
 Write text that belongs in the product and sounds natural to its audience. Avoid empty superlatives, generic promises, forced intimacy, poetic reassurance, and long courtesy formulas around simple actions. Keep implementation reports and explanations of the design process out of the interface. Explain access restrictions, consequences, and recovery steps where they help users act; preserve necessary consent, security, and legal information.
 
 Prefer a specific action, object, or state. Describe errors using known facts and a useful next step; do not invent a cause to make the message sound helpful. Judge phrases in context rather than maintaining a blacklist of individual words. Brand personality can shape the voice while labels and instructions remain clear.
@@ -82,7 +84,7 @@ Ask what evidence visitors need before acting. Use available material to compare
 
 ### Important motion
 
-Show direct feedback and a noticeable state transition for the same operation; add a more narrative candidate only when useful. Explain frequency, perceived waiting, orientation, and mobile cost. Recommend a project-appropriate starting point, then refine it through samples. Do not equate more animation with better design.
+Before implementing major motion, check existing guidance for purpose and intensity. When the direction is unsettled and not delegated, ask the user to compare direct feedback and a short spatial transition for the same operation; add a more narrative candidate only when useful. Describe or show the visible difference, explain frequency, perceived waiting, orientation, and mobile cost, and recommend a project-appropriate starting point. Ask about the experience, not a duration, easing curve, or library. Refine parameters through samples after the direction is settled. Do not equate more animation with better design.
 
 ## Preserve decisions rather than complete chats
 
