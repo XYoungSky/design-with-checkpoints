@@ -2,7 +2,7 @@
 
 [English](#design-with-checkpoints) · [简体中文](#简体中文)
 
-Design with Checkpoints is a frontend design skill for building websites, redesigning interfaces, and reviewing existing designs. It involves you in key decisions through focused questions and sample reviews, then guides implementation and testing in stages.
+Design with Checkpoints is a frontend design skill for building websites, redesigning interfaces, and reviewing existing designs. The agent aligns with you at three checkpoints, proposes opinionated layout, typography, and motion directions, and checks every layout and animation before delivery.
 
 ## Installation
 
@@ -56,19 +56,24 @@ In other tools, select the skill using the tool's skill picker or ask an agent w
 
 ## Key Features
 
-- **Focused checkpoints.** Discuss direction and key details using concrete options tied to the interface.
-- **Sample reviews.** Review representative layouts and interactions before extending them across the site.
-- **Project continuity.** Work with the existing stack, design conventions, and agreed decisions.
-- **Practical verification.** Check responsive layouts, interactions, and accessibility, and document the results.
+- **Three checkpoints.** Confirm the brief, choose a direction from real-content samples, and review one slice before it is repeated across pages.
+- **Opinionated proposals.** Each direction states its design idea, its layout, type, and motion moves, what it costs, and a recommendation.
+- **Layout check.** Every changed page is checked at five widths, in Chinese and English, against concrete type and spacing rules.
+- **Motion intensity and inventory.** Choose calm, lively, or expressive motion from samples. Every animation is listed with its job, duration, and reduced-motion fallback; you see the list at the direction check, the sample review, and in the final report.
+- **Lightweight.** Small tweaks are fixed directly; reference files load only when needed.
 
 ## Files
 
-- [SKILL.md](skills/design-with-checkpoints/SKILL.md): agent instructions and workflow.
-- [Interview and decisions](skills/design-with-checkpoints/references/interview-and-decisions.md): options, decision records, and feedback.
-- [Reference evidence](skills/design-with-checkpoints/references/reference-evidence.md): research, prototype comparisons, and evidence quality.
-- [Motion and QA](skills/design-with-checkpoints/references/motion-and-qa.md): interaction, responsive behavior, accessibility, and performance checks.
-- [Project templates](skills/design-with-checkpoints/references/project-templates.md): briefs, specifications, handoffs, and regression scenarios.
-- [Sources](skills/design-with-checkpoints/references/sources.md): background and references for the workflow.
+- [SKILL.md](skills/design-with-checkpoints/SKILL.md): workflow and checkpoints.
+- [Alignment](skills/design-with-checkpoints/references/alignment.md): restating the brief, asking questions, presenting directions, recording decisions, and interface copy.
+- [Layout and type](skills/design-with-checkpoints/references/layout-and-type.md): composition, grid, spacing, Chinese and English typography, and the layout check.
+- [Motion](skills/design-with-checkpoints/references/motion.md): animation jobs, intensity levels, techniques, starting values, reduced motion, and the motion inventory.
+- [Verify](skills/design-with-checkpoints/references/verify.md): screenshots, interaction, accessibility, and the handoff report.
+- [Regression cases](evals/cases.md): cases for revising the skill; not installed with it.
+
+## Acknowledgements
+
+The workflow draws on [Anthropic frontend-design](https://github.com/anthropics/skills/blob/main/skills/frontend-design/SKILL.md), [taste-skill](https://github.com/Leonxlnx/taste-skill), [Matt Pocock's grilling skill](https://github.com/mattpocock/skills/blob/main/skills/productivity/grilling/SKILL.md), [Superpowers](https://github.com/obra/superpowers), [Emil Kowalski's skills](https://github.com/emilkowalski/skills), [ibelick ui-skills](https://github.com/ibelick/ui-skills), [Impeccable](https://github.com/pbakaus/impeccable), the [Double Diamond](https://www.designcouncil.org.uk/resources/the-double-diamond/), [GOV.UK prototyping guidance](https://www.gov.uk/service-manual/design/making-prototypes), [WCAG 2.2](https://www.w3.org/TR/WCAG22/), the [WAI-ARIA Authoring Practices](https://www.w3.org/WAI/ARIA/apg/patterns/), and [web.dev on motion](https://web.dev/articles/prefers-reduced-motion).
 
 ## License
 
@@ -76,7 +81,7 @@ Licensed under the [MIT License](LICENSE).
 
 ## 简体中文
 
-Design with Checkpoints 是一个用于网站新建、界面改版和设计审查的前端设计 skill。它通过具体提问和样例审阅，让你参与关键设计决策，再分阶段推进实现与测试。
+Design with Checkpoints 是一个用于网站新建、界面改版和设计审查的前端设计 skill。AI 在三个检查点与你对齐想法，提出有明确主张的排版、字体与动效方案，并在交付前逐项检查每个布局和每个动效。
 
 ### 安装
 
@@ -129,19 +134,24 @@ $design-with-checkpoints 改进当前网站。
 
 ### 核心特点
 
-- **关键决策提问。** 结合实际界面提供具体选项，讨论设计方向和关键细节。
-- **阶段样例审阅。** 通过典型布局和交互样例确认效果，再扩展到整个网站。
-- **保持项目一致性。** 沿用现有技术栈、设计约定和已确定的决策。
-- **实际效果验证。** 检查响应式布局、交互和可访问性，并记录测试结果。
+- **三个检查点。** 确认需求复述；用真实内容的小样选择方向；先审阅一个代表性片段，再扩展到其他页面。
+- **有主张的方案。** 每个方向都说明设计想法、具体的排版、字体与动效做法、代价和推荐理由。
+- **排版检查。** 每个改动的页面都在五种宽度、中英文两种语言下，按具体的字体与间距规则检查。
+- **动效强度与动效清单。** 通过样例在克制、生动、华丽三档中选择动效强度。每个动效都列出用途、时长和减弱动效时的替代方式；方向检查、样例审阅和最终报告中都会给你看这份清单。
+- **轻量。** 小改动直接修改；参考文件只在需要时读取。
 
 ### 文件导航
 
-- [SKILL.md](skills/design-with-checkpoints/SKILL.md)：技能说明与工作流程。
-- [提问与决策](skills/design-with-checkpoints/references/interview-and-decisions.md)：设计选项、决策记录与反馈处理。
-- [参考与证据](skills/design-with-checkpoints/references/reference-evidence.md)：案例研究、原型比较与证据评估。
-- [动效与质量检查](skills/design-with-checkpoints/references/motion-and-qa.md)：交互、响应式、可访问性与性能检查。
-- [项目模板](skills/design-with-checkpoints/references/project-templates.md)：简报、设计规格、交付记录和回归场景。
-- [参考来源](skills/design-with-checkpoints/references/sources.md)：工作方法的背景与参考资料。
+- [SKILL.md](skills/design-with-checkpoints/SKILL.md)：工作流程与检查点。
+- [对齐](skills/design-with-checkpoints/references/alignment.md)：复述需求、提问、呈现方向、记录决策和界面文案。
+- [排版与字体](skills/design-with-checkpoints/references/layout-and-type.md)：构图、网格、间距、中英文排版和排版检查。
+- [动效](skills/design-with-checkpoints/references/motion.md)：动效用途、强度分档、技法、起点数值、减弱动效和动效清单。
+- [验证](skills/design-with-checkpoints/references/verify.md)：截图、交互、可访问性和交付报告。
+- [回归用例](evals/cases.md)：修订 skill 时使用，不随 skill 安装。
+
+### 致谢
+
+工作方法参考了上方英文部分 [Acknowledgements](#acknowledgements) 中列出的项目与标准。
 
 ### 许可证
 
