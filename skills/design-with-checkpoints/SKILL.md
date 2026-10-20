@@ -70,7 +70,7 @@ Make no edits. Screenshot the interface at 390 and 1440px, read its code, and de
 
 ## Build
 
-Work in coherent batches within the existing stack and components; add a library only when the task needs it. Design components from the agreed direction; look at outside component galleries only when the user asks, following [outside galleries](references/layout-and-type.md#outside-component-galleries). Tune spacing, sizes, and timing yourself within the agreed direction, and return to the user only when a new question would change that direction. Record each consequential decision as one line: the decision, the reason, and who approved it.
+Work in coherent batches within the existing stack and components; add a library only when the task needs it. Design components from the agreed direction. When the user asks for gallery references, link existing components first and adapt the chosen one during implementation; see [outside galleries](references/layout-and-type.md#outside-component-galleries). Tune spacing, sizes, and timing yourself within the agreed direction, and return to the user only when a new question would change that direction. Record each consequential decision as one line: the decision, the reason, and who approved it.
 
 ## Check before delivery
 

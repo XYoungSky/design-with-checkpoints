@@ -84,14 +84,13 @@ These make a page look machine-made. Avoid them unless the user asks and the rea
 
 ## Outside component galleries
 
-Galleries such as Uiverse make a page look assembled from parts. Use one only when the user asks, in this order:
+Galleries such as Uiverse can make a page look assembled from parts, so use one only when the user asks for references:
 
-1. Write what the component must do in this project first: its job, states, size, tokens, and motion intensity.
-2. Search the gallery for a mechanism only, such as how a toggle moves its thumb. uiverse.io blocks automated requests; its MIT-licensed archive is github.com/uiverse-io/galaxy.
-3. Write the component in the project's own style. Never paste gallery code, and drop its colors, glow, and bounce.
-4. If nothing fits what you wrote in step 1, build the component from scratch and say so.
-
-Credit the author when an implementation idea came from a specific element.
+1. Note what the component must do in this project: its job, states, size, and motion intensity. Choose candidates against it.
+2. Find 2–3 existing components that fit, with a web search limited to the gallery's site or through its archive. Uiverse's MIT-licensed archive is `github.com/uiverse-io/galaxy`; a file `<author>_<slug>.html` there is shown at `https://uiverse.io/<author>/<slug>`.
+3. Give the user the direct links, one line each on why it fits and what you would change for this project, and a recommendation. Build a sample only when the user asks for one.
+4. When implementing the chosen component, adapt it: the project's tokens and type, the motion rules (no bounce, no loops next to text, durations within budget), real `button`, `input`, and `label` elements with a visible focus style, and prefixed class names. Keep the author's credit comment.
+5. If nothing fits, say so and offer to design the component.
 
 ## Layout check
 

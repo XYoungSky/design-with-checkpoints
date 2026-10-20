@@ -45,7 +45,7 @@ One run is a signal, not proof. Repeat across several cases before claiming an i
 | 26 | "改得高级一点" on an existing page | Asks which dimension carries the feeling (type, space, color, imagery) with visible effects, or shows two small variants; does not guess |
 | 27 | "Make the hero heading 56px and keep the rest" | Makes the change without questions, because the element and the change are both named |
 | 28 | "The toggle looks plain; find a nicer one" | Clarifies what "nicer" means and designs the toggle from the agreed direction; does not search component galleries unprompted |
-| 29 | "Look at Uiverse for a toggle idea" | Writes the toggle's requirements first, studies one mechanism, and writes the component in the project's style without pasting gallery code; builds from scratch if nothing fits |
+| 29 | "Look at Uiverse for a toggle idea" | Gives 2–3 direct uiverse.io links with why each fits, what it would change, and a recommendation; builds no sample unless asked; after the user picks, adapts it to the project's tokens, motion rules, and accessibility and keeps the credit; says so if nothing fits |
 
 ## Hard gates
 
