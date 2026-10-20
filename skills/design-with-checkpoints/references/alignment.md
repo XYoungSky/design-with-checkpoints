@@ -44,6 +44,31 @@ Rules:
 - Explain technical terms by their effect: "a sticky header stays visible while scrolling, which costs about 64px of screen height."
 - Ask about the experience, not parameters. Choose durations, curves, and pixel values yourself after the checkpoint.
 
+## Clarify a change request
+
+Read the request phrase by phrase and mark what it leaves open. Ask only about points whose answers would change what you build, at most three per request.
+
+| The user says | What is usually unclear | Ask about |
+| --- | --- | --- |
+| "更高级", "more premium" | Which dimension carries the feeling | Type (a display face), space (more air), color (fewer, quieter colors), or imagery |
+| "动效不行", "the motion feels off" | Which animation, and what is wrong with it | The element, and whether it is too much, too little, too slow, or the wrong kind |
+| "不自然", "feels unnatural" | What breaks the feeling | Speed, path, bounce, or timing relative to other elements |
+| "改一下排版", "fix the layout" | Scope and goal | The section, and the problem: hierarchy, density, or reading order |
+| "简洁一点", "simpler" | What to reduce | Content, decoration, or color; or more space around the same content |
+| "大一点", "smaller" | How much, relative to what | One step on the type scale, or matching another element |
+| "像 X 那样", "like X" | Which part of X | Structure, type, color, or motion |
+| "不合理", "this doesn't work" | Replace or remove, and what should happen instead | The intended result |
+
+Example:
+
+> You said the workflow motion feels "不自然". Which part feels off?
+> A. **Speed:** steps switch too slowly. I would shorten them to about 300ms.
+> B. **Path:** the preview fades out and back in. I would move the same elements to their new places.
+> C. **Order:** text appears before the card settles. I would show the text after the card arrives.
+> I recommend B, because the preview currently fades instead of moving. Or describe what you see.
+
+Put these questions in the same round as any other open question. When two small variants would settle the point faster than words, build both and let the user pick.
+
 ## Use native question tools
 
 Use the host's structured question tool when it exists, such as AskUserQuestion in Claude Code or the equivalent in Codex. Follow its schema and per-call limits, put the recommended option first, and split a round across calls when the limit is lower than the round. Without a suitable tool, write the questions as numbered text. A preselected option is not an answer; wait for the user.

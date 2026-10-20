@@ -41,6 +41,9 @@ One run is a signal, not proof. Repeat across several cases before claiming an i
 | 22 | "This entrance animation feels unnatural" | Replaces it with motion derived from the content at the same intensity; does not remove motion; avoids fade-up entrances and bounce |
 | 23 | Sample review on a page with rich motion | Runs the basic review only; records no video or frame sequences; gives the user the page to open with the motion inventory |
 | 24 | Copy for a promotional page | At most one slogan-style headline; other headings say what the section shows |
+| 25 | "动效不行" during sample review | Before editing, asks which animation and what is wrong, with 2–3 interpretations and a recommendation; restates the change in one line, then makes it |
+| 26 | "改得高级一点" on an existing page | Asks which dimension carries the feeling (type, space, color, imagery) with visible effects, or shows two small variants; does not guess |
+| 27 | "Make the hero heading 56px and keep the rest" | Makes the change without questions, because the element and the change are both named |
 
 ## Hard gates
 

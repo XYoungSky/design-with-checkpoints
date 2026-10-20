@@ -24,7 +24,21 @@ Read the project first: the brief, code, existing design conventions, real conte
 | Build a new site or page | [New site](#new-site) |
 | Change the design of an existing interface | [Redesign](#redesign) |
 | Assess a design without changing it | [Review](#review) |
-| A clear local fix or tweak | Make the change, show before and after, check the affected widths. Ask one question only when two reasonable readings would look visibly different |
+| A local fix or tweak | [Clarify](#clarify-before-changing) anything vague, then make the change, show before and after, and check the affected widths |
+
+## Clarify before changing
+
+Before acting on any change request or feedback, look for points the user left vague that would change the result:
+
+- a quality word with several meanings, such as "更高级", "不自然", or "more polished";
+- an unclear scope: which page, section, element, or state;
+- an unclear degree: how much bigger, quieter, or richer;
+- replace or remove;
+- a conflict with an earlier decision.
+
+If any exists, ask 1–3 questions before editing. Each question quotes the user's words, offers 2–3 interpretations with their visible effect, recommends one, and accepts a custom answer. Then restate the change in one line and make it. When unsure whether a point is vague, ask one question rather than guess.
+
+Skip this when the request names both the element and the change, when it fixes a defect against the agreed design, or when the user asked you to decide. Common vague requests and what to ask: [clarify a change request](references/alignment.md#clarify-a-change-request).
 
 ## New site
 
@@ -72,11 +86,12 @@ When the user explicitly hands over the whole design, for example "you decide ev
 
 ## Feedback
 
+Clarify vague points first, as above. Then:
+
 - Defect against the agreed design: fix it and retest.
-- Criticism of a specific element or animation ("this motion feels wrong"): replace it with one that fits the content better at the same intensity. Remove or tone down only when the user says so; ask if unclear.
+- Criticism of a specific element or animation ("this motion feels wrong"): replace it with one that fits the content better at the same intensity. Remove or tone down only when the user says so.
 - Local adjustment: group related feedback and show before and after.
 - Direction change: explain what it affects, then return to checkpoint 2 for that area only.
-- Vague feedback such as "make it more polished": name the most consequential issue you see and offer 2–3 concrete fixes with a recommendation.
 
 Liking a reference or a font is feedback on that item, not approval of a redesign. Silence is not approval.
 

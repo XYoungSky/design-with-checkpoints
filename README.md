@@ -57,6 +57,7 @@ In other tools, select the skill using the tool's skill picker or ask an agent w
 ## Key Features
 
 - **Three checkpoints.** Confirm the brief, choose a direction from real-content samples, and review one slice before it is repeated across pages.
+- **Clarifies vague requests.** Before changing anything, the agent asks 1–3 questions about points you left open, such as "more premium" or "the motion feels off", each with interpretations and a recommendation.
 - **Opinionated proposals.** Each direction states its design idea, its layout, type, and motion moves, what it costs, and a recommendation.
 - **Layout check.** Every changed page is checked at phone and desktop widths, in Chinese and English, against concrete type and spacing rules and a list of machine-made patterns.
 - **Motion intensity and inventory.** Choose calm, lively, or expressive motion from samples. Every animation is listed with its job, duration, and reduced-motion fallback; you see the list at the direction check, the sample review, and in the final report.
@@ -135,6 +136,7 @@ $design-with-checkpoints 改进当前网站。
 ### 核心特点
 
 - **三个检查点。** 确认需求复述；用真实内容的小样选择方向；先审阅一个代表性片段，再扩展到其他页面。
+- **先澄清模糊需求。** 动手修改前，针对你没说清、但会影响结果的地方（比如“更高级”“动效不行”）先问 1–3 个问题，每个问题都给出几种理解和推荐。
 - **有主张的方案。** 每个方向都说明设计想法、具体的排版、字体与动效做法、代价和推荐理由。
 - **排版检查。** 每个改动的页面都在手机和桌面宽度、中英文两种语言下，按具体的字体与间距规则检查，并排除常见的 AI 模板特征。
 - **动效强度与动效清单。** 通过样例在克制、生动、华丽三档中选择动效强度。每个动效都列出用途、时长和减弱动效时的替代方式；方向检查、样例审阅和最终报告中都会给你看这份清单。
