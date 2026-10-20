@@ -1,30 +1,30 @@
 # Verify
 
-Keep the review basic and quick. The user judges how the page looks and moves; you confirm that nothing is broken.
+Keep verification light: take a few screenshots and read the code. The user judges how the page looks and moves on the live page.
 
-## Basic review
+## Screenshots
 
-For each changed page:
+Take only the screenshots you need: each changed page once at 390px and once at 1440px, with a headless browser or the host's screenshot tool. Look at them and run the [layout check](layout-and-type.md#layout-check). Add a screenshot of a particular state, such as an open menu, only when the change is about that state.
 
-1. **Screenshots** at 390 and 1440px wide. Add 320 when the layout is tight, or the widths the audience mainly uses. Look at them and run the [layout check](layout-and-type.md#layout-check).
-2. **One small script**, when a browser tool is available: horizontal overflow, console errors, failed requests, text under 12px, and text contrast below 4.5:1 (3:1 for large text).
-3. **Keyboard:** Tab through the main controls once. Focus is visible and never trapped; Escape closes overlays.
-4. **Reduced motion:** turn it on once. All content is visible and every control works.
-5. **Motion:** confirm by script that animations end in the right state, including after rapid repeated clicks. Do not record videos or frame sequences. Give the user a page to open instead, with the [motion inventory](motion.md#motion-inventory).
+Do not use computer use or desktop control, step through the page click by click, capture frame sequences, or record videos. Without a screenshot tool, say that the rendered page is unchecked.
 
-Without a browser, run what you can and say that the rendered page is untested.
+## Read the code
 
-## Only when asked, or when the change is about it
+Check the changed code for:
 
-A five-width matrix, 200% text zoom, touch emulation, CPU throttling, performance traces, cross-browser runs, and screen-reader checks.
+- **Layout:** fixed widths or heights that can overflow at 320px; text under 12px; text colors below 4.5:1 contrast on their background (3:1 for large text).
+- **Semantics and keyboard:** real buttons, links, inputs, and labels; a visible `:focus-visible` style; Escape closes overlays; hidden content cannot receive focus.
+- **Motion:** every animation appears in the [motion inventory](motion.md#motion-inventory); transitions retarget from the current state; no state waits on `animationend`; a `prefers-reduced-motion` path covers both CSS and JavaScript animation.
+- **Content:** real text, no leftover placeholders, and [interface copy](alignment.md#interface-copy) that fits the project.
+- **Errors:** obvious script errors, missing files, broken links.
 
-## Keep it light
+## Only when asked
 
-Save only the screenshots you show the user. Keep scratch scripts outside the deliverable and delete them when done. Test forms with safe data; never send real messages or orders.
+Browser automation, scripted keyboard runs, text zoom, touch emulation, performance traces, cross-browser runs, and screen-reader checks.
 
 ## Report honestly
 
-Say what you saw in the browser, what you inferred from the code, and what you did not test. A successful build is not a tested interface.
+Say which screenshots you looked at, what you checked in the code, and what you did not test. A successful build is not a tested interface.
 
 Handoff:
 
@@ -32,7 +32,7 @@ Handoff:
 Changed: what changed, with a link to the page or files.
 Decisions: consequential choices and who approved them.
 Motion: the chosen intensity and the final motion inventory.
-Checked: widths, keyboard, reduced motion.
+Checked: screenshots taken and code reviewed.
 Untested: what was not checked, if it matters.
 Next: the one thing the user needs to decide or do, if any.
 ```

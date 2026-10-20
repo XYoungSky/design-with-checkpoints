@@ -113,7 +113,7 @@ Rules:
 
 - No job means the animation is removed.
 - High frequency with a duration over 150ms needs a written reason, or a shorter duration.
-- Check by script that every row ends in the right state, also after rapid repeated input and with reduced motion on. The user judges how it feels on the live page.
+- Check in the code that every row reaches its final state, retargets on rapid repeated input, and has a reduced-motion path. The user judges how it feels on the live page.
 
 ## Asking about motion
 

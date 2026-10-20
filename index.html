@@ -22,7 +22,7 @@
   --accent-soft:#e3f3f5;
   --ease:cubic-bezier(.22,1,.36,1);
   --feedback:140ms;
-  --scene:460ms;
+  --scene:480ms;
   --spring:linear(0, 0.203 8.3%, 0.496 16.7%, 0.713 25%, 0.845 33.3%, 0.92 41.7%, 0.96 50%, 0.98 58.3%, 0.99 66.7%, 0.995 75%, 0.998 83.3%, 1);
   --serif:"Noto Serif SC","Songti SC","STSong","Source Han Serif SC","Noto Serif CJK SC",serif;
   --rail-offset:-28px;
@@ -407,11 +407,6 @@ h1 {
 .checkpoint-stamp span {
   font:8px var(--mono);
   letter-spacing:.07em
-}
-.checkpoint-stamp b {
-  font-weight:300;
-  font-size:44px;
-  line-height:1.2
 }
 .bench-caption {
   position:absolute;
@@ -1230,23 +1225,17 @@ html[lang="en"] .hero-buttons {
 html[lang="en"] .button {
   gap:24px
 }
-/* Expressive motion follows the content: arrange the brief, choose a layout, carry that same
-   preview into implementation and review. Entrances run on first view or explicit replay only.
-   Decisions, 2026-10-21:
-   - Rich, expressive interaction: requested by the user; keep the existing composition and typography.
-   - One persistent preview, native scroll, no looping decoration: chosen by the agent for continuity.
-   - Layout reflow gets 420ms so its spatial change can be followed; selection feedback stays at 140ms.
-   - Back-sheet depth is capped at 4 degrees; the front card and main text stay in place. Agent choice.
+/* Motion decisions, 2026-10-21:
+   - Narrative continuity + expressive motion: approved by the user. Keep the page's layout and type.
+   - The same preview travels through the workflow; native scroll scrubs its position. Agent choice.
+   - Layout changes get 420ms to explain the reordering; selection feedback stays at 140ms. Agent choice.
+   - Only the illustrated back sheets respond to the pointer, capped at 6 degrees. Agent choice.
+   - Entrances play once or on explicit replay. Reduced motion keeps the complete resting state.
 */
 @media (prefers-reduced-motion: no-preference) {
   @keyframes dwc-from-stack {
     from {
       transform:translate(0,7px) rotate(-3deg)
-    }
-  }
-  @keyframes dwc-front {
-    from {
-      transform:translate(-16px,15px) rotate(0)
     }
   }
   @keyframes dwc-draw {
@@ -1259,13 +1248,10 @@ html[lang="en"] .button {
       transform:scaleX(0)
     }
   }
-  @keyframes dwc-draw-vertical {
-    from { transform:scaleY(0) }
-  }
   @keyframes dwc-stamp {
     from {
       opacity:0;
-      transform:rotate(15deg) scale(1.18)
+      transform:rotate(9deg) scale(1.08)
     }
   }
   @keyframes dwc-check {
@@ -1274,30 +1260,33 @@ html[lang="en"] .button {
   @keyframes dwc-phone {
     from { clip-path:inset(0 0 100% 0 round 8px) }
   }
+  @keyframes dwc-reveal-plan {
+    from { clip-path:inset(0 100% 0 0) }
+  }
   .hero-play .sheet-back {
-    animation:dwc-from-stack 720ms var(--spring) 40ms both
+    animation:dwc-from-stack 820ms var(--spring) 160ms backwards
   }
   .hero-play .sheet-middle {
-    animation:dwc-from-stack 680ms var(--spring) 120ms both
-  }
-  .hero-play .sheet-front {
-    animation:dwc-front 600ms var(--spring) both
+    animation:dwc-from-stack 760ms var(--spring) 40ms backwards
   }
   .hero-play .caption-one i {
-    animation:dwc-draw 360ms var(--ease) 460ms both
+    animation:dwc-draw 360ms var(--ease) 320ms backwards
   }
   .hero-play .caption-two i {
     transform-origin:left;
-    animation:dwc-draw-flat 360ms var(--ease) 580ms both
+    animation:dwc-draw-flat 360ms var(--ease) 620ms backwards
   }
   .hero-play .checkpoint-stamp {
-    animation:dwc-stamp 240ms cubic-bezier(.55,0,1,.45) 880ms both
+    animation:dwc-stamp 180ms var(--ease) 900ms backwards
+  }
+  .hero-play .stamp-check path {
+    animation:dwc-check 220ms var(--ease) 960ms backwards
+  }
+  .hero-play .small-grid,.hero-play .wire-lines {
+    animation:dwc-reveal-plan 420ms var(--ease) 380ms backwards
   }
   .process.is-entered .demo-workspace[data-stage="0"] .brief-fields::after {
     animation:dwc-draw-flat 380ms var(--ease) both
-  }
-  .demo-workspace[data-stage="1"] .workflow-connector {
-    animation:dwc-draw-flat 420ms var(--ease) both
   }
   .demo-workspace[data-stage="3"] .phone-frame {
     animation:dwc-phone 460ms var(--ease) both
@@ -1307,9 +1296,6 @@ html[lang="en"] .button {
   }
   .demo-workspace[data-stage="3"] .review-item:nth-child(2) .check-mark path {
     animation-delay:180ms
-  }
-  .demo-workspace[data-stage="3"] .review-device::before {
-    animation:dwc-draw-flat 380ms var(--ease) 80ms both
   }
   :is(.button,.copy-button,.layout-picker button,.agent-picker button,.mini-options button,.hero-confirm,.hero-controls button,.direction-choices button,.step) {
     transition:color var(--feedback) ease-out,background-color var(--feedback) ease-out,border-color var(--feedback) ease-out,transform 120ms ease-out
@@ -1508,9 +1494,6 @@ html[lang="en"] .button {
   }
   .checkpoint-stamp span {
     font-size:6px
-  }
-  .checkpoint-stamp b {
-    font-size:32px
   }
   .caption-two {
     display:none
@@ -2133,13 +2116,9 @@ h1 .title-line:last-child { color:var(--accent); }
 .review-item.pending>span { color:#7a6506; }
 .review-device { position:absolute; left:30px; top:270px; display:flex; align-items:center; gap:22px; }
 .review-device>span { font-size:12px; color:#536f79; }
-.review-device::before { content:""; position:absolute; top:-21px; left:28px; width:35px; height:1px; background:#7baab0; transform-origin:left; }
 .check-mark { width:16px; height:16px; flex-shrink:0; margin-top:2px; }
 .check-mark svg { display:block; width:100%; height:100%; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
 .check-mark path { stroke-dasharray:1; stroke-dashoffset:0; }
-.workflow-connector { position:absolute; left:50%; top:47%; width:4%; height:1px; background:#7baab0; transform-origin:left; visibility:hidden; pointer-events:none; }
-.workflow-connector::after { content:""; position:absolute; right:0; top:-2px; width:5px; height:5px; border-radius:50%; background:var(--accent); }
-.demo-workspace[data-stage="1"] .workflow-connector { visibility:visible; }
 .phone-frame { width:58px; height:104px; border:2px solid #7c969e; border-radius:8px; padding:8px 5px; background:white; }
 .phone-frame>i { display:block; height:3px; width:13px; border-radius:3px; background:#92a8b0; margin:0 auto 7px; }
 .phone-art { height:39px; background:linear-gradient(135deg,#abd5dd 50%,#dff0f3 50%); }
@@ -2176,9 +2155,6 @@ h1 .title-line:last-child { color:var(--accent); }
   .user-decision { margin-top:10px; font-size:12px; }
   .implementation-preview { left:24px; width:calc(100% - 48px); top:106px; }
   .demo-workspace[data-stage="1"] .implementation-preview { transform:translate(13%,183px) scale(.74); }
-  .workflow-connector { left:50%;top:calc(100% - 200px);width:1px;height:24px;transform-origin:top; }
-  .workflow-connector::after { right:-2px;top:auto;bottom:0; }
-  .demo-workspace[data-stage="1"] .workflow-connector { animation:dwc-draw-vertical 420ms var(--ease) both; }
   .demo-workspace[data-stage="2"] .implementation-preview { transform:translateY(14px); }
   .demo-workspace[data-stage="2"] .shared-surface { inset:116px 21px 21px; }
   .build-scene { padding:60px 25px 0; }
@@ -2214,7 +2190,6 @@ h1 .title-line:last-child { color:var(--accent); }
   .review-item strong { font-size:12px; }
   .review-item small { font-size:12px; line-height:1.6; margin-top:3px; }
   .review-device { left:65%; top:86px; display:block; }
-  .review-device::before { top:50%;left:-26px;width:26px; }
   .review-device>span { display:none; }
   .layout-picker { min-height:68px; padding:10px 12px; flex-direction:column; align-items:stretch; gap:8px; }
   .layout-picker>div { margin:0; display:flex; }
@@ -2298,6 +2273,38 @@ html[lang="en"] .hero-description { font-size:16px; }
   .hero-confirm { justify-content:flex-start;gap:8px; }
 }
 
+/* Each paper and connector describes a real change in the selected direction. */
+.stamp-check { display:block; width:44px; height:48px; }
+.stamp-check path { stroke-dasharray:1; stroke-dashoffset:0; }
+.small-grid,.wire-lines { clip-path:inset(0); }
+.phone-frame { clip-path:inset(0 round 8px); }
+.small-grid { height:155px; grid-template-columns:1.3fr 1fr; grid-template-rows:1fr .6fr 18px; gap:10px; }
+.small-grid i { height:auto; min-height:0; transform-origin:0 0; }
+.small-grid i:first-child { grid-column:1; grid-row:1/3; background:#c4e1e5; border-color:#6b9da4; }
+.small-grid i:nth-child(2) { grid-column:2; grid-row:1; }
+.small-grid i:nth-child(3) { grid-column:2; grid-row:2; }
+.small-grid i:last-child { grid-column:1/-1; grid-row:3; }
+.hero-workbench[data-layout="about"] .small-grid { grid-template-rows:1.5fr .55fr .3fr; }
+.hero-workbench[data-layout="about"] .small-grid i:first-child { grid-column:1/-1; grid-row:1; }
+.hero-workbench[data-layout="about"] .small-grid i:nth-child(2) { grid-column:1; grid-row:2/4; }
+.hero-workbench[data-layout="about"] .small-grid i:nth-child(3) { grid-column:2; grid-row:2; }
+.hero-workbench[data-layout="about"] .small-grid i:last-child { grid-column:2; grid-row:3; }
+.implementation-preview { transition:opacity var(--feedback) ease-out,visibility 0s var(--feedback); }
+.workflow-path { position:absolute; inset:0; width:100%; height:100%; overflow:visible; pointer-events:none; visibility:hidden; }
+.workflow-path path { stroke-width:1.25; stroke-linecap:round; vector-effect:non-scaling-stroke; }
+.workflow-path-guide { stroke:#c8dadd; }
+.workflow-path-ink { stroke:var(--accent); stroke-dasharray:1; stroke-dashoffset:0; }
+.demo-workspace:is([data-stage="1"],[data-stage="3"]) .workflow-path { visibility:visible; }
+.is-scrubbing .implementation-preview { visibility:visible; transition:none; }
+.is-scrubbing .shared-surface { transition:none; }
+.is-measuring * { animation:none!important; transition:none!important; }
+@media(max-width:850px) {
+  .stamp-check { width:34px; height:36px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .hero-depth { transform:none!important; }
+}
+
 </style>
 </head>
 <body>
@@ -2316,13 +2323,13 @@ html[lang="en"] .hero-description { font-size:16px; }
 <div class="hero-buttons"><a class="button primary" href="#install"><span data-zh="安装 skill" data-en="Install the skill">安装 skill</span> <span aria-hidden="true">↓</span></a><a class="text-link" href="#process"><span data-zh="查看工作流程" data-en="View the workflow">查看工作流程</span> <span aria-hidden="true">↗</span></a></div>
 <div class="compatibility"><span class="status-dot"></span><span>Codex / Claude Code / <span data-zh="兼容 skills 的工具" data-en="skill-compatible tools">兼容 skills 的工具</span></span></div>
 </div>
-<div class="hero-workbench" id="hero-workbench">
+<div class="hero-workbench" id="hero-workbench" data-layout="work">
 <div class="hero-depth" aria-hidden="true">
 <div class="sheet sheet-back" aria-hidden="true"><span>03 — BUILD</span><div class="wire-lines"></div></div>
 <div class="sheet sheet-middle" aria-hidden="true"><span>02 — DIRECTION</span><div class="small-grid"><i></i><i></i><i></i><i></i></div></div>
 </div>
 <div class="sheet sheet-front"><div class="sheet-head"><span class="sheet-id">01 / CHECKPOINT</span><span class="small-dot"></span></div><p class="sheet-title" id="hero-question"><span data-zh="作品集首页应突出哪些内容？" data-en="What should the portfolio lead with?">作品集首页应突出哪些内容？</span></p><div class="mini-options" role="group" aria-labelledby="hero-question"><button data-layout="work" aria-pressed="true"><span data-zh="作品优先" data-en="Work first">作品优先</span></button><button data-layout="about" aria-pressed="false"><span data-zh="介绍优先" data-en="About first">介绍优先</span></button></div><div class="sheet-foot"><a class="hero-confirm" href="#process"><span data-zh="查看选定方案" data-en="Preview this direction">查看选定方案</span><span aria-hidden="true">↗</span></a></div></div>
-<div class="checkpoint-stamp" aria-hidden="true"><span>CHECKPOINT</span><b>✓</b><span data-zh="已确认" data-en="CONFIRMED">已确认</span></div>
+<div class="checkpoint-stamp" aria-hidden="true"><span>CHECKPOINT</span><svg class="stamp-check" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path pathLength="1" d="m12 24 8 8 17-19"/></svg><span data-zh="已确认" data-en="CONFIRMED">已确认</span></div>
 <span class="bench-caption caption-one"><span data-zh="选择设计方向" data-en="SELECT A DIRECTION">选择设计方向</span><i></i></span><span class="bench-caption caption-two"><i></i><span data-zh="确认后实现" data-en="IMPLEMENT AFTER REVIEW">确认后实现</span></span>
 <div class="hero-controls"><span data-zh="试着切换卡片上的选项" data-en="Try the choices on the card">试着切换卡片上的选项</span><button id="replay-hero" type="button" disabled><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 6a7 7 0 1 1-1 7M4 2v5h5"/></svg><span data-zh="重播" data-en="Replay">重播</span></button></div>
 </div>
@@ -2345,7 +2352,7 @@ html[lang="en"] .hero-description { font-size:16px; }
 <div class="demo-annotation"><span class="annotation-number" id="annotation-number">01</span><span id="annotation-text"></span></div>
 <div class="scene-navigation" role="group" aria-label="切换检查点"><button type="button" id="previous-stage" aria-label="上一个检查点" aria-controls="demo-workspace" disabled><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m12 5-5 5 5 5"/></svg></button><button type="button" id="next-stage" aria-label="下一个检查点" aria-controls="demo-workspace"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m8 5 5 5-5 5"/></svg></button></div>
 <div class="shared-surface" aria-hidden="true"></div>
-<i class="workflow-connector" aria-hidden="true"></i>
+<svg class="workflow-path" aria-hidden="true" fill="none"><path class="workflow-path-guide"/><path class="workflow-path-ink" pathLength="1"/></svg>
 <section class="workflow-scene brief-scene" data-scene="0">
 <div class="message-author"><span class="avatar user-avatar">U</span><strong><span data-zh="用户需求" data-en="User request">用户需求</span></strong><span>01</span></div>
 <p class="request-message"><span data-zh="我需要一个作品集网站，用于向潜在客户介绍我的设计工作。" data-en="I need a portfolio website to introduce my design work to prospective clients.">我需要一个作品集网站，用于向潜在客户介绍我的设计工作。</span></p>
@@ -2389,7 +2396,7 @@ html[lang="en"] .hero-description { font-size:16px; }
 <section class="install-section" id="install" aria-labelledby="install-title"><div class="wrap install-grid"><div><div class="section-label"><span>04 / <span data-zh="开始使用" data-en="GET STARTED">开始使用</span></span><span class="label-rule"></span></div><h2 id="install-title"><span data-zh="安装与使用" data-en="Installation and usage">安装与使用</span></h2><p class="install-intro"><span data-zh="安装 skill，打开你的 AI 编程工具，&amp;#10;从一个具体的设计任务开始。" data-en="Install the skill, open your AI coding tool,&amp;#10;and start with a specific design task.">安装 skill，打开你的 AI 编程工具，&#10;从一个具体的设计任务开始。</span></p><a class="text-link light" href="https://github.com/XYoungSky/design-with-checkpoints" target="_blank" rel="noopener"><span data-zh="在 GitHub 查看项目" data-en="View the project on GitHub">在 GitHub 查看项目</span> ↗</a></div>
 <div class="install-instructions"><div class="instruction-top"><span>01 — <span data-zh="安装" data-en="INSTALL">安装</span></span><span><span data-zh="需要 Node.js 与 npm" data-en="REQUIRES NODE.JS &amp; NPM">需要 Node.js 与 npm</span></span></div><div class="code-block"><code id="install-command">npx skills@latest add XYoungSky/design-with-checkpoints --skill design-with-checkpoints</code><button class="copy-button" data-copy="install-command"><span data-zh="复制命令" data-en="Copy command">复制命令</span> <span aria-hidden="true">⧉</span></button></div><p class="install-note"><span data-zh="在项目目录运行，按提示选择目标 agent。添加 --global 可用于所有项目。" data-en="Run in your project directory and select your agent. Add --global to install across projects.">在项目目录运行，按提示选择目标 agent。添加 --global 可用于所有项目。</span></p><div class="instruction-top second"><span>02 — <span data-zh="开始一个任务" data-en="START A TASK">开始一个任务</span></span><div class="agent-picker" role="group" aria-label="Agent"><button data-agent="codex" aria-pressed="true">Codex</button><button data-agent="claude" aria-pressed="false">Claude Code</button></div></div><div class="code-block prompt-block"><code id="usage-prompt"></code><button class="copy-button" data-copy="usage-prompt"><span data-zh="复制示例" data-en="Copy prompt">复制示例</span> <span aria-hidden="true">⧉</span></button></div><a class="manual-link" href="https://github.com/XYoungSky/design-with-checkpoints#installation" target="_blank" rel="noopener"><span data-zh="手动安装与其他工具的使用方法" data-en="Manual installation and other tools">手动安装与其他工具的使用方法</span> ↗</a></div></div></section>
 <section class="details-section wrap section" aria-labelledby="details-title"><div class="section-label"><span>05 / <span data-zh="常见问题" data-en="FAQ">常见问题</span></span><span class="label-rule"></span></div><div class="details-grid"><h2 id="details-title"><span data-zh="使用说明" data-en="Usage notes">使用说明</span></h2><div class="faq-list">
-<details><summary><span data-zh="它会在什么时候提问？" data-en="When does it ask questions?">它会在什么时候提问？</span><span aria-hidden="true">+</span></summary><div class="faq-answer"><p><span data-zh="新建或改版时，AI 先复述需求，问一轮会改变设计的问题；再用真实内容做出 2–3 个方向小样供你选择；最后先做一个样例给你审阅，再扩展到其他页面。之后每次修改，如果需求里有说得模糊、又会影响结果的地方，会先问 1–3 个问题；意图明确的小改动直接修改。" data-en="For a new design or a redesign, the agent restates the brief and asks one round of questions that change the design. It then shows 2–3 directions as real-content samples for you to choose from, and has you review one sample before expanding it. For later changes, it first asks 1–3 questions about anything vague that would change the result; clear small tweaks are made directly.">新建或改版时，AI 先复述需求，问一轮会改变设计的问题；再用真实内容做出 2–3 个方向小样供你选择；最后先做一个样例给你审阅，再扩展到其他页面。之后每次修改，如果需求里有说得模糊、又会影响结果的地方，会先问 1–3 个问题；意图明确的小改动直接修改。</span></p></div></details><details><summary><span data-zh="可以把设计全部交给 AI 吗？" data-en="Can I delegate the entire design?">可以把设计全部交给 AI 吗？</span><span aria-hidden="true">+</span></summary><div class="faq-answer"><p><span data-zh="可以。明确委托 AI 完整设计与实现后，AI 会自主决定设计偏好，仍需获得不可缺少的事实与必要权限。你要求的审阅节点会保留。" data-en="Yes. Explicitly delegate the entire design and implementation, and the agent can decide design preferences. Essential facts and necessary permissions are still required, and any review point you request remains in place.">可以。明确委托 AI 完整设计与实现后，AI 会自主决定设计偏好，仍需获得不可缺少的事实与必要权限。你要求的审阅节点会保留。</span></p></div></details><details><summary><span data-zh="每个任务都要做研究和原型吗？" data-en="Does every task need research and prototypes?">每个任务都要做研究和原型吗？</span><span aria-hidden="true">+</span></summary><div class="faq-answer"><p><span data-zh="不需要。研究、方向探索和原型用于解决重要的不确定性，按任务规模选择。局部修改会沿最短路径定位、修改并复测。" data-en="No. Research, direction exploration, and prototypes help resolve material uncertainty. Their scope follows the task. A focused fix takes the shortest path from diagnosis to a checked result.">不需要。研究、方向探索和原型用于解决重要的不确定性，按任务规模选择。局部修改会沿最短路径定位、修改并复测。</span></p></div></details><details><summary><span data-zh="“验证”具体包含什么？" data-en="What does verification cover?">“验证”具体包含什么？</span><span aria-hidden="true">+</span></summary><div class="faq-answer"><p><span data-zh="每个改动的页面都在 5 种宽度下做排版检查，覆盖中文与英文；每个动效都要写明用途，并测试快速重复操作和减弱动效设置。报告会区分实际观察、代码推断与未验证的部分；构建通过不代表体验已经验证。" data-en="Every changed page gets a layout check at five widths, in Chinese and English. Every animation needs a stated purpose and is tested with rapid repeated input and with reduced motion on. Reports separate observed behavior, inferences from code, and untested areas. A successful build alone does not verify the experience.">每个改动的页面都在 5 种宽度下做排版检查，覆盖中文与英文；每个动效都要写明用途，并测试快速重复操作和减弱动效设置。报告会区分实际观察、代码推断与未验证的部分；构建通过不代表体验已经验证。</span></p></div></details>
+<details><summary><span data-zh="它会在什么时候提问？" data-en="When does it ask questions?">它会在什么时候提问？</span><span aria-hidden="true">+</span></summary><div class="faq-answer"><p><span data-zh="新建或改版时，AI 先复述需求，问一轮会改变设计的问题；再用真实内容做出 2–3 个方向小样供你选择；最后先做一个样例给你审阅，再扩展到其他页面。之后每次修改，如果需求里有说得模糊、又会影响结果的地方，会先问 1–3 个问题；意图明确的小改动直接修改。" data-en="For a new design or a redesign, the agent restates the brief and asks one round of questions that change the design. It then shows 2–3 directions as real-content samples for you to choose from, and has you review one sample before expanding it. For later changes, it first asks 1–3 questions about anything vague that would change the result; clear small tweaks are made directly.">新建或改版时，AI 先复述需求，问一轮会改变设计的问题；再用真实内容做出 2–3 个方向小样供你选择；最后先做一个样例给你审阅，再扩展到其他页面。之后每次修改，如果需求里有说得模糊、又会影响结果的地方，会先问 1–3 个问题；意图明确的小改动直接修改。</span></p></div></details><details><summary><span data-zh="可以把设计全部交给 AI 吗？" data-en="Can I delegate the entire design?">可以把设计全部交给 AI 吗？</span><span aria-hidden="true">+</span></summary><div class="faq-answer"><p><span data-zh="可以。明确委托 AI 完整设计与实现后，AI 会自主决定设计偏好，仍需获得不可缺少的事实与必要权限。你要求的审阅节点会保留。" data-en="Yes. Explicitly delegate the entire design and implementation, and the agent can decide design preferences. Essential facts and necessary permissions are still required, and any review point you request remains in place.">可以。明确委托 AI 完整设计与实现后，AI 会自主决定设计偏好，仍需获得不可缺少的事实与必要权限。你要求的审阅节点会保留。</span></p></div></details><details><summary><span data-zh="每个任务都要做研究和原型吗？" data-en="Does every task need research and prototypes?">每个任务都要做研究和原型吗？</span><span aria-hidden="true">+</span></summary><div class="faq-answer"><p><span data-zh="不需要。研究、方向探索和原型用于解决重要的不确定性，按任务规模选择。局部修改会沿最短路径定位、修改并复测。" data-en="No. Research, direction exploration, and prototypes help resolve material uncertainty. Their scope follows the task. A focused fix takes the shortest path from diagnosis to a checked result.">不需要。研究、方向探索和原型用于解决重要的不确定性，按任务规模选择。局部修改会沿最短路径定位、修改并复测。</span></p></div></details><details><summary><span data-zh="“验证”具体包含什么？" data-en="What does verification cover?">“验证”具体包含什么？</span><span aria-hidden="true">+</span></summary><div class="faq-answer"><p><span data-zh="改完后截几张必要的图（手机和桌面宽度各一张），再阅读改动的代码，检查排版、对比度、键盘焦点、动效的最终状态和减弱动效。动效好不好看由你在浏览器里判断。报告会写明看过哪些截图、检查了哪些代码、哪些没有测试。" data-en="After a change, the agent takes a few screenshots, one at phone width and one at desktop width, and reads the changed code for layout, contrast, keyboard focus, final animation states, and reduced motion. You judge how the motion feels in your browser. Reports list the screenshots taken, the code checked, and what was not tested.">改完后截几张必要的图（手机和桌面宽度各一张），再阅读改动的代码，检查排版、对比度、键盘焦点、动效的最终状态和减弱动效。动效好不好看由你在浏览器里判断。报告会写明看过哪些截图、检查了哪些代码、哪些没有测试。</span></p></div></details>
 <a class="text-link source-link" href="https://github.com/XYoungSky/design-with-checkpoints/blob/HEAD/skills/design-with-checkpoints/SKILL.md" target="_blank" rel="noopener"><span data-zh="阅读完整 SKILL.md" data-en="Read the full SKILL.md">阅读完整 SKILL.md</span> ↗</a></div></div></section>
 </main>
 <footer class="wrap"><div class="footer-top"><a class="footer-name" href="#">Design with<br><em>Checkpoints.</em></a><a class="back-top" href="#"><span data-zh="回到顶部" data-en="Back to top">回到顶部</span> ↑</a></div><div class="footer-bottom"><span><span data-zh="面向 AI 编程工具的前端设计 skill" data-en="A frontend design skill for AI coding tools">面向 AI 编程工具的前端设计 skill</span></span><span><a href="https://github.com/XYoungSky/design-with-checkpoints/blob/HEAD/LICENSE" target="_blank" rel="noopener">MIT LICENSE ↗</a><a href="https://github.com/XYoungSky/design-with-checkpoints" target="_blank" rel="noopener">GITHUB ↗</a></span></div></footer>
@@ -2403,16 +2410,24 @@ html[lang="en"] .hero-description { font-size:16px; }
   const $ = selector => document.querySelector(selector);
   const $$ = selector => [...document.querySelectorAll(selector)];
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-  const spring = getComputedStyle(root).getPropertyValue('--spring').trim();
+  const springCurve = getComputedStyle(root).getPropertyValue('--spring').trim();
+  const spring = CSS.supports('animation-timing-function',springCurve) ? springCurve : 'cubic-bezier(.22,1,.36,1)';
+  const sceneDuration = Number.parseFloat(getComputedStyle(root).getPropertyValue('--scene'));
   const desktop = matchMedia('(min-width: 1000px) and (min-height: 740px)');
   const finePointer = matchMedia('(hover: hover) and (pointer: fine)');
   const surface = $('.shared-surface');
   const canvas = $('.collaboration-canvas');
+  const workspace = $('.demo-workspace');
+  const preview = $('.implementation-preview');
+  const connector = $('.workflow-path');
+  const connectorInk = $('.workflow-path-ink');
   const workbench = $('#hero-workbench');
   const pick = (zh, en) => lang === 'zh' ? zh : en;
   let lang = 'zh', stage = 0, agent = 'codex', layout = 'work', toastTimer;
-  let activeAnimations = [], surfaceAnimation = null, stampAnimation = null;
-  let raf = 0, pointerFrame = 0, scrollLockUntil = 0;
+  let activeAnimations = [], heroLayoutAnimations = [], sceneAnimations = [];
+  let surfaceAnimation = null, previewAnimation = null, stampAnimation = null, connectorAnimation = null, decisionAnimation = null;
+  let raf = 0, pointerFrame = 0, connectorFrame = 0, scrollLockUntil = 0;
+  let workflowPoses = [];
   try { lang = localStorage.getItem('dwc-language') === 'en' ? 'en' : 'zh'; } catch (_) {}
   const descriptions = [
     ['用户提供网站用途、已有内容和目标受众。AI 整理信息，识别还需要确认的设计决策。', 'The user supplies the purpose, content, and audience. The agent identifies the design decisions still to be made.'],
@@ -2449,6 +2464,84 @@ html[lang="en"] .hero-description { font-size:16px; }
     const box = canvas.getBoundingClientRect();
     return box.bottom > 0 && box.top < innerHeight;
   }
+  function releaseScrollPose() {
+    workspace.classList.remove('is-scrubbing');
+    preview.style.removeProperty('transform');
+    preview.style.removeProperty('opacity');
+    surface.style.removeProperty('transform');
+    surface.style.removeProperty('opacity');
+  }
+  function measureWorkflow() {
+    // Read responsive resting styles once; scrolling only interpolates transforms between them.
+    workflowPoses = [];
+    if (!desktop.matches || reduced.matches) return;
+    releaseScrollPose();
+    workspace.classList.add('is-measuring');
+    const current = workspace.dataset.stage;
+    for (let i=0;i<4;i++) {
+      workspace.dataset.stage = String(i);
+      const matrix = new DOMMatrix(getComputedStyle(preview).transform);
+      workflowPoses.push({
+        x:matrix.e,y:matrix.f,scale:matrix.a,opacity:i===0?0:1,
+        sheet:{x:surface.offsetLeft,y:surface.offsetTop,width:surface.offsetWidth,height:surface.offsetHeight,opacity:Number(getComputedStyle(surface).opacity)}
+      });
+    }
+    // The preview emerges beside the question, then remains the same element through review.
+    Object.assign(workflowPoses[0],{x:workflowPoses[1].x,y:workflowPoses[1].y+12,scale:workflowPoses[1].scale});
+    workspace.dataset.stage = current;
+    void workspace.offsetWidth;
+    workspace.classList.remove('is-measuring');
+  }
+  function updateConnector() {
+    const bounds = canvas.getBoundingClientRect();
+    connector.setAttribute('viewBox',`0 0 ${canvas.clientWidth} ${canvas.clientHeight}`);
+    if (stage !== 1 && stage !== 3) return;
+    const a = (stage===1 ? surface : preview).getBoundingClientRect();
+    const b = (stage===1 ? preview : $('.phone-frame')).getBoundingClientRect();
+    const vertical = stage===1 ? matchMedia('(max-width:650px)').matches : b.top >= a.bottom-8;
+    const start = vertical ? {x:a.left+a.width/2,y:a.bottom} : {x:a.right,y:a.top+a.height/2};
+    const end = vertical ? {x:b.left+b.width/2,y:b.top} : {x:b.left,y:b.top+b.height/2};
+    const x1=start.x-bounds.left,y1=start.y-bounds.top,x2=end.x-bounds.left,y2=end.y-bounds.top;
+    // Do not draw across a card while two surfaces are passing each other.
+    const clear = vertical ? y2>y1+4 : x2>x1+4;
+    connector.style.opacity = clear?'1':'0';
+    const bend = vertical ? Math.max(8,(y2-y1)/2) : Math.max(8,(x2-x1)/2);
+    const d = vertical
+      ? `M${x1},${y1} C${x1},${y1+bend} ${x2},${y2-bend} ${x2},${y2}`
+      : `M${x1},${y1} C${x1+bend},${y1} ${x2-bend},${y2} ${x2},${y2}`;
+    connector.querySelectorAll('path').forEach(path=>path.setAttribute('d',d));
+  }
+  function trackConnector(duration=0) {
+    cancelAnimationFrame(connectorFrame);
+    connectorFrame=0;
+    updateConnector();
+    if (reduced.matches || !duration || !canvasIsVisible()) return;
+    const until=performance.now()+duration;
+    const tick=now=>{
+      updateConnector();
+      if(now<until) connectorFrame=requestAnimationFrame(tick);
+      else connectorFrame=0;
+    };
+    connectorFrame=requestAnimationFrame(tick);
+  }
+  function drawConnector(duration=360) {
+    connectorAnimation?.cancel();
+    if (reduced.matches || !canvasIsVisible() || (stage!==1 && stage!==3)) return;
+    connectorAnimation=connectorInk.animate([{strokeDashoffset:1},{strokeDashoffset:0}],{duration,easing:'cubic-bezier(.22,1,.36,1)'});
+  }
+  function scrubWorkflow(position) {
+    if (!workflowPoses.length) return;
+    workspace.classList.add('is-scrubbing');
+    const index=Math.min(2,Math.floor(position)),a=workflowPoses[index],b=workflowPoses[index+1];
+    // Give every checkpoint a readable resting interval, with motion between the intervals.
+    const raw=Math.max(0,Math.min(1,(position-index-.2)/.6));
+    const t=raw*raw*(3-2*raw),mix=(x,y)=>x+(y-x)*t;
+    preview.style.transform=`translate(${mix(a.x,b.x)}px,${mix(a.y,b.y)}px) scale(${mix(a.scale,b.scale)})`;
+    preview.style.opacity=String(mix(a.opacity,b.opacity));
+    surface.style.transform=`translate(${mix(a.sheet.x,b.sheet.x)-surface.offsetLeft}px,${mix(a.sheet.y,b.sheet.y)-surface.offsetTop}px) scale(${mix(a.sheet.width,b.sheet.width)/surface.offsetWidth},${mix(a.sheet.height,b.sheet.height)/surface.offsetHeight})`;
+    surface.style.opacity=String(mix(a.sheet.opacity,b.sheet.opacity));
+    updateConnector();
+  }
   function moveSurface(before) {
     // The empty sheet changes layout once; only its transform animates, without reflowing text.
     const x = surface.offsetLeft, y = surface.offsetTop;
@@ -2457,17 +2550,25 @@ html[lang="en"] .hero-description { font-size:16px; }
     surfaceAnimation = surface.animate([
       {transform:`translate(${before.x-x}px,${before.y-y}px) scale(${before.width/width},${before.height/height})`},
       {transform:'none'}
-    ],{duration:460,easing:spring});
+    ],{duration:sceneDuration,easing:spring});
   }
-  function setStage(next, fromControl = false) {
+  function setStage(next, fromControl = false, fromScroll = false) {
     next = Math.max(0, Math.min(3, next));
     const changed = next !== stage;
-    const before = changed ? surfaceBox() : null;
-    if (changed) {
+    const transitioning = changed || (fromControl && workspace.classList.contains('is-scrubbing'));
+    const before = transitioning ? surfaceBox() : null;
+    const previewBefore = transitioning && (stage!==0 || workspace.classList.contains('is-scrubbing')) ? getComputedStyle(preview).transform : null;
+    if (transitioning) {
       surfaceAnimation?.cancel();
+      previewAnimation?.cancel();
+      connectorAnimation?.cancel();
+      decisionAnimation?.cancel();
+      sceneAnimations.forEach(a=>a.cancel());
+      sceneAnimations=[];
       activeAnimations.forEach(a => a.cancel());
       activeAnimations = [];
     }
+    if (!fromScroll) releaseScrollPose();
     stage = next;
     $$('.step').forEach((button, i) => {
       button.classList.toggle('active', i === stage);
@@ -2478,7 +2579,7 @@ html[lang="en"] .hero-description { font-size:16px; }
     if ((focusedScene && Number(focusedScene.dataset.scene) !== stage) || (stage === 0 && $('.layout-picker').contains(document.activeElement))) {
       $(`.step[data-step="${stage}"]`).focus({preventScroll: true});
     }
-    $('.demo-workspace').dataset.stage = String(stage);
+    workspace.dataset.stage = String(stage);
     $$('[data-scene]').forEach(scene => {
       const hidden = Number(scene.dataset.scene) !== stage;
       scene.inert = hidden;
@@ -2493,7 +2594,17 @@ html[lang="en"] .hero-description { font-size:16px; }
     $('.process-progress i').style.transform = `scaleX(${(stage + 1) / 4})`;
     updateStageText();
     updateStepMarker();
-    if (changed && !reduced.matches && canvasIsVisible()) moveSurface(before);
+    if (transitioning && !fromScroll && !reduced.matches && canvasIsVisible()) {
+      moveSurface(before);
+      if (previewBefore && stage!==0) {
+        previewAnimation=preview.animate([{transform:previewBefore},{transform:getComputedStyle(preview).transform}],{duration:sceneDuration,easing:spring});
+      }
+      // Text stays put while the paper begins its handoff.
+      const incoming=$(`[data-scene="${stage}"]`);
+      sceneAnimations.push(incoming.animate([{opacity:.2},{opacity:1}],{duration:180,easing:'ease-out'}));
+      drawConnector();
+    }
+    if (changed || transitioning) trackConnector(fromScroll?0:sceneDuration+20);
     if (fromControl && desktop.matches && !reduced.matches) snapToStage(stage);
   }
   function updatePrompt() {
@@ -2507,6 +2618,7 @@ html[lang="en"] .hero-description { font-size:16px; }
         : pick('点选检查点，或左右滑动示例。', 'Choose a checkpoint, or swipe across the demo.');
   }
   function setLanguage(value) {
+    cancelSnap();
     settleMotion();
     settleAccordions();
     lang = value;
@@ -2525,6 +2637,7 @@ html[lang="en"] .hero-description { font-size:16px; }
     document.title = pick('Design with Checkpoints — 前端设计 Skill', 'Design with Checkpoints — A frontend design skill');
     $('meta[name="description"]').content = pick('用于 AI 编程工具的前端设计 skill。了解需求确认、设计选择、分阶段实现与验证流程，以及安装和使用方法。', 'A frontend design skill for AI coding tools. Learn about requirements, design choices, staged implementation, verification, and installation.');
     updatePrompt(); updateStageText(); updateProcessHint(); updateStepMarker(false);
+    measureWorkflow(); trackConnector(); requestScrollUpdate();
     try { localStorage.setItem('dwc-language', lang); } catch (_) {}
   }
   $('#language').addEventListener('click', () => setLanguage(lang === 'zh' ? 'en' : 'zh'));
@@ -2547,14 +2660,29 @@ html[lang="en"] .hero-description { font-size:16px; }
   function changeLayout(next, fromHero = false) {
     if (layout === next) return;
     const blocks = $$('[data-flip]');
+    const heroBlocks = $$('.small-grid i');
+    const heroBefore = heroBlocks.map(el=>{
+      const m=new DOMMatrix(getComputedStyle(el).transform);
+      return {x:el.offsetLeft+m.e,y:el.offsetTop+m.f,width:el.offsetWidth*m.a,height:el.offsetHeight*m.d};
+    });
     // Sample the displayed positions before cancelling, so quick reversals keep their continuity.
     const before = blocks.map(el => el.getBoundingClientRect());
     activeAnimations.forEach(a => a.cancel());
+    heroLayoutAnimations.forEach(a=>a.cancel());
+    heroLayoutAnimations=[];
+    if (fromHero) confirmHeroChoice();
     layout = next;
     $('#portfolio').dataset.layout = layout;
+    workbench.dataset.layout = layout;
     $$('button[data-layout]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.layout === layout)));
     updateStageText();
-    if (fromHero) confirmHeroChoice();
+    const heroBounds=workbench.getBoundingClientRect();
+    if (!reduced.matches && heroBounds.bottom>0 && heroBounds.top<innerHeight) {
+      heroLayoutAnimations=heroBlocks.map((el,i)=>el.animate([
+        {transform:`translate(${heroBefore[i].x-el.offsetLeft}px,${heroBefore[i].y-el.offsetTop}px) scale(${heroBefore[i].width/el.offsetWidth},${heroBefore[i].height/el.offsetHeight})`},
+        {transform:'none'}
+      ],{duration:420,easing:spring}));
+    }
     if (reduced.matches || stage === 0 || !canvasIsVisible()) return;
     const scale = $('.implementation-preview').getBoundingClientRect().width / $('.implementation-preview').offsetWidth;
     const after = blocks.map(el => el.getBoundingClientRect());
@@ -2562,6 +2690,11 @@ html[lang="en"] .hero-description { font-size:16px; }
       {transform:`translate(${(before[i].left-after[i].left)/scale}px, ${(before[i].top-after[i].top)/scale}px) scale(${before[i].width/after[i].width}, ${before[i].height/after[i].height})`, transformOrigin:'0 0'},
       {transform:'none',transformOrigin:'0 0'}
     ], {duration:420,easing:spring}));
+    if (stage===1) {
+      decisionAnimation?.cancel();
+      decisionAnimation=$('.user-decision').animate([{backgroundColor:'#e3f3f5'},{backgroundColor:'transparent'}],{duration:140,easing:'ease-out'});
+    }
+    drawConnector(140);
   }
   $$('button[data-layout]').forEach(button => button.addEventListener('click', () => changeLayout(button.dataset.layout,Boolean(button.closest('.mini-options')))));
   // A single, replayable narrative. Pointer depth belongs only to the two illustrated back sheets.
@@ -2576,6 +2709,7 @@ html[lang="en"] .hero-description { font-size:16px; }
     workbench.getAnimations({subtree:true}).forEach(a => a.cancel());
     workbench.classList.remove('hero-play');
     stampAnimation?.cancel();
+    heroLayoutAnimations=[];
     resetPointer();
   }
   function playHero() {
@@ -2590,10 +2724,10 @@ html[lang="en"] .hero-description { font-size:16px; }
     stopHero();
     heroSeen = true;
     if (reduced.matches) return;
-    stampAnimation = $('.checkpoint-stamp').animate([
-      {transform:'rotate(12deg) scale(1.12)',opacity:.45},
-      {transform:'rotate(9deg)',opacity:1}
-    ],{duration:140,easing:'cubic-bezier(.55,0,1,.45)'});
+    stampAnimation = $('.stamp-check path').animate([
+      {strokeDashoffset:1},
+      {strokeDashoffset:0}
+    ],{duration:140,easing:'ease-out'});
   }
   $('#replay-hero').disabled = false;
   $('#replay-hero').addEventListener('click',playHero);
@@ -2605,8 +2739,8 @@ html[lang="en"] .hero-description { font-size:16px; }
     cancelAnimationFrame(pointerFrame);
     pointerFrame = requestAnimationFrame(() => {
       pointerFrame = 0;
-      workbench.style.setProperty('--bench-x',`${-y*4}deg`);
-      workbench.style.setProperty('--bench-y',`${x*4}deg`);
+      workbench.style.setProperty('--bench-x',`${-y*6}deg`);
+      workbench.style.setProperty('--bench-y',`${x*6}deg`);
     });
   },{passive:true});
   workbench.addEventListener('pointerleave',resetPointer);
@@ -2693,9 +2827,14 @@ html[lang="en"] .hero-description { font-size:16px; }
   function settleMotion() {
     activeAnimations.forEach(a => a.cancel());
     activeAnimations = [];
-    surfaceAnimation?.cancel(); stampAnimation?.cancel();
-    surfaceAnimation = null; stampAnimation = null;
+    heroLayoutAnimations.forEach(a=>a.cancel()); heroLayoutAnimations=[];
+    sceneAnimations.forEach(a=>a.cancel()); sceneAnimations=[];
+    surfaceAnimation?.cancel(); previewAnimation?.cancel(); stampAnimation?.cancel(); connectorAnimation?.cancel(); decisionAnimation?.cancel();
+    surfaceAnimation = null; previewAnimation = null; stampAnimation = null; connectorAnimation=null; decisionAnimation=null;
+    cancelAnimationFrame(connectorFrame); connectorFrame=0;
     document.getAnimations().forEach(a => a.cancel());
+    workbench.classList.remove('hero-play');
+    releaseScrollPose();
     resetPointer();
     gesture=null;
   }
@@ -2725,19 +2864,23 @@ html[lang="en"] .hero-description { font-size:16px; }
   function updateScroll() {
     raf=0;
     updateRail();
-    if(!desktop.matches || reduced.matches || performance.now()<scrollLockUntil) return;
+    if(!desktop.matches || reduced.matches) { releaseScrollPose();updateConnector();return; }
+    if(performance.now()<scrollLockUntil) return;
     const g=geometry();
     // Re-enter from above at the brief, and from below at the review.
     if(g.rect.top>1 || g.rect.bottom<innerHeight-1) {
       const boundary=g.rect.top>1?0:3;
-      if(boundary!==stage) setStage(boundary);
+      releaseScrollPose();
+      if(boundary!==stage) setStage(boundary,false,true);
+      updateConnector();
       return;
     }
     const progress=Math.max(0,Math.min(1,-g.rect.top/g.travel));
     // A small dead band prevents trackpads from flickering between two neighboring checkpoints.
     const position=progress*3;
     const next=Math.abs(position-stage)>.57?Math.round(position):stage;
-    if(next!==stage) setStage(next);
+    if(next!==stage) setStage(next,false,true);
+    scrubWorkflow(position);
     $('.process-progress').classList.add('is-scrolling');
     $('.process-progress i').style.transform=`scaleX(${.25+progress*.75})`;
   }
@@ -2768,13 +2911,18 @@ html[lang="en"] .hero-description { font-size:16px; }
   addEventListener('scroll',requestScrollUpdate,{passive:true});
   const onResize=()=>{
     settleMotion();settleAccordions();updateProcessHint();updateStepMarker(false);
-    cancelSnap();requestScrollUpdate();
+    cancelSnap();measureWorkflow();trackConnector();requestScrollUpdate();
   };
   addEventListener('resize',onResize,{passive:true});
   reduced.addEventListener('change',()=>{onResize();requestScrollUpdate();});
   finePointer.addEventListener('change',() => {resetPointer();updateProcessHint();});
-  // User scrolling or a same-page link takes over from an unfinished step scroll.
-  ['wheel','touchstart','keydown'].forEach(type=>addEventListener(type,cancelSnap,{passive:true}));
+  // Scrolling takes over immediately. Tab and Enter leave an unfinished handoff intact.
+  ['wheel','touchstart'].forEach(type=>addEventListener(type,cancelSnap,{passive:true}));
+  addEventListener('keydown',event=>{
+    const scrollKey=['ArrowUp','ArrowDown','PageUp','PageDown','Home','End','Escape'].includes(event.key);
+    const pageSpace=event.code==='Space' && !event.target.closest('button,input,textarea,select,summary,[contenteditable]');
+    if(scrollKey || pageSpace) cancelSnap();
+  },{passive:true});
   $$('a[href^="#"]').forEach(a=>a.addEventListener('click',cancelSnap));
   $('.hero-confirm').addEventListener('click',event => {
     event.preventDefault();

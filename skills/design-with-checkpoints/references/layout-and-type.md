@@ -82,9 +82,20 @@ These make a page look machine-made. Avoid them unless the user asks and the rea
 - hover effects on elements that cannot be clicked;
 - placeholder names such as "XXX" or lorem ipsum in a sample shown to the user.
 
+## Outside component galleries
+
+Galleries such as Uiverse make a page look assembled from parts. Use one only when the user asks, in this order:
+
+1. Write what the component must do in this project first: its job, states, size, tokens, and motion intensity.
+2. Search the gallery for a mechanism only, such as how a toggle moves its thumb. uiverse.io blocks automated requests; its MIT-licensed archive is github.com/uiverse-io/galaxy.
+3. Write the component in the project's own style. Never paste gallery code, and drop its colors, glow, and bounce.
+4. If nothing fits what you wrote in step 1, build the component from scratch and say so.
+
+Credit the author when an implementation idea came from a specific element.
+
 ## Layout check
 
-Run this on the screenshots of every changed page at 390 and 1440px wide, adding 320 when the layout is tight, with the longest real content. Fix each failure, or record why it is acceptable.
+Run this on the screenshots of every changed page at 390 and 1440px wide, and check narrower widths and other states in the CSS, with the longest real content. Fix each failure, or record why it is acceptable.
 
 1. **Focus.** The primary task and the focal point are clear on the first screen.
 2. **Fit.** No clipping, overlap, or horizontal scrolling. Headings wrap evenly, with no single character or word alone on the last line.

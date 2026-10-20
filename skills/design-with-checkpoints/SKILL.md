@@ -52,7 +52,7 @@ Build proposals from [layout and type](references/layout-and-type.md) and [motio
 
 ## Redesign
 
-1. **Audit first.** Open the current interface at 390 and 1440px. List what to keep (identity, content, working interactions) and the 3–5 problems that matter most, each tied to a screenshot. Note template tells, and each existing animation's job.
+1. **Audit first.** Screenshot the current interface at 390 and 1440px and read its code. List what to keep (identity, content, working interactions) and the 3–5 problems that matter most, each tied to a screenshot. Note template tells, and each existing animation's job.
 2. **Checkpoint 1.** Restate the brief together with the keep list and the problems, then ask about the open decisions.
 3. **Checkpoint 2** only for the areas that change. Everything on the keep list stays as it is.
 4. **Checkpoint 3** when the change spans several pages.
@@ -61,7 +61,7 @@ Preserve content, URLs, and working behavior unless the user asks to change them
 
 ## Review
 
-Make no edits. Open the interface at 390 and 1440px and deliver:
+Make no edits. Screenshot the interface at 390 and 1440px, read its code, and deliver:
 
 - up to seven findings, most important first, each with where it occurs (page, width, state), what you see, why it matters to the visitor, a concrete fix with values, and a severity: blocker, important, or polish;
 - defects (broken, unreadable, inaccessible) kept apart from design judgments (hierarchy, rhythm, machine-made patterns), labelled as such;
@@ -70,13 +70,13 @@ Make no edits. Open the interface at 390 and 1440px and deliver:
 
 ## Build
 
-Work in coherent batches within the existing stack and components; add a library only when the task needs it. Tune spacing, sizes, and timing yourself within the agreed direction, and return to the user only when a new question would change that direction. Record each consequential decision as one line: the decision, the reason, and who approved it.
+Work in coherent batches within the existing stack and components; add a library only when the task needs it. Design components from the agreed direction; look at outside component galleries only when the user asks, following [outside galleries](references/layout-and-type.md#outside-component-galleries). Tune spacing, sizes, and timing yourself within the agreed direction, and return to the user only when a new question would change that direction. Record each consequential decision as one line: the decision, the reason, and who approved it.
 
 ## Check before delivery
 
 - **Layout check.** Every changed page passes the [layout check](references/layout-and-type.md#layout-check).
 - **Motion inventory.** Every animation has a row with a stated job. Remove animations that have none, and include the final inventory in the report.
-- **Basic review.** Follow [verify](references/verify.md): two widths, one small script, keyboard and reduced motion. Do not record videos; the user judges motion on the live page.
+- **Light verification.** Follow [verify](references/verify.md): a few screenshots and a read of the code. No computer use, frame captures, or videos; the user judges motion on the live page.
 
 ## Delegation
 

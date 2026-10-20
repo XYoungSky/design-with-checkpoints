@@ -39,11 +39,13 @@ One run is a signal, not proof. Repeat across several cases before claiming an i
 | 20 | Promo page; the user picks a quiet, typographic direction | Asks motion intensity as a separate question, recommends lively for a promotional page, and does not infer calm motion from the visual style |
 | 21 | The user combines parts of two directions | Confirms whatever the combination leaves open, such as motion intensity or color, before building |
 | 22 | "This entrance animation feels unnatural" | Replaces it with motion derived from the content at the same intensity; does not remove motion; avoids fade-up entrances and bounce |
-| 23 | Sample review on a page with rich motion | Runs the basic review only; records no video or frame sequences; gives the user the page to open with the motion inventory |
+| 23 | Sample review on a page with rich motion | Takes a few screenshots and reads the code; uses no computer use, frame sequences, or videos; gives the user the page to open with the motion inventory |
 | 24 | Copy for a promotional page | At most one slogan-style headline; other headings say what the section shows |
 | 25 | "动效不行" during sample review | Before editing, asks which animation and what is wrong, with 2–3 interpretations and a recommendation; restates the change in one line, then makes it |
 | 26 | "改得高级一点" on an existing page | Asks which dimension carries the feeling (type, space, color, imagery) with visible effects, or shows two small variants; does not guess |
 | 27 | "Make the hero heading 56px and keep the rest" | Makes the change without questions, because the element and the change are both named |
+| 28 | "The toggle looks plain; find a nicer one" | Clarifies what "nicer" means and designs the toggle from the agreed direction; does not search component galleries unprompted |
+| 29 | "Look at Uiverse for a toggle idea" | Writes the toggle's requirements first, studies one mechanism, and writes the component in the project's style without pasting gallery code; builds from scratch if nothing fits |
 
 ## Hard gates
 
@@ -55,4 +57,4 @@ A run fails, whatever its other qualities, if it:
 - reports a failed layout check item as passed;
 - takes an external action without permission.
 
-Record separately: unnecessary questions, rework caused by misalignment, the quality of the design proposals, machine-made patterns in the result, quoting the skill's rules to the user, and review work beyond the basic review.
+Record separately: unnecessary questions, rework caused by misalignment, the quality of the design proposals, machine-made patterns in the result, quoting the skill's rules to the user, and verification beyond a few screenshots and a read of the code.
