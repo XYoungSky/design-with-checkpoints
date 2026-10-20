@@ -48,7 +48,9 @@ Rules:
 
 Use the host's structured question tool when it exists, such as AskUserQuestion in Claude Code or the equivalent in Codex. Follow its schema and per-call limits, put the recommended option first, and split a round across calls when the limit is lower than the round. Without a suitable tool, write the questions as numbered text. A preselected option is not an answer; wait for the user.
 
-## Turn taste words and references into decisions
+## Get taste input
+
+Human taste is the most reliable way to keep a page from looking machine-made. In checkpoint 1, ask once for one to three things the user likes, such as websites, magazines, posters, or products, and which part of each they like. If they have none, offer three short contrasting feels, such as "editorial and quiet", "bold and graphic", and "precise and technical", and recommend one.
 
 Words such as "modern", "clean", "premium", or "高级感" do not settle a design. Translate them into concrete axes and ask about the axis that is actually open:
 
@@ -79,6 +81,8 @@ Costs: weaker emotional first impression; needs at least 8 projects to feel full
 
 Show each direction as a sample with the same real content, so the user compares designs and not content. List its animations as draft rows of the [motion inventory](motion.md#motion-inventory), so the user sees what will move before anything is built. Recommend one.
 
+Ask motion intensity as its own question; never infer it from the visual style. When the user combines parts of two directions, confirm whatever the combination leaves open, such as motion intensity or color, before building.
+
 ## Record decisions
 
 Keep one line per consequential decision in the project's existing notes or in the handoff:
@@ -97,9 +101,12 @@ When the voice is unsettled, show three short versions of one real heading or bu
 
 Write text that names the action, object, or state. State errors from known facts and give a next step; do not invent a cause. Keep process notes and design commentary out of the interface.
 
+On marketing pages, allow at most one slogan-style line, usually the main headline. Other headings say what the section shows. Repeating one rhetorical pattern, such as a short phrase, a comma, and a payoff, across every heading reads as machine-written.
+
 | Context | Avoid | Prefer |
 | --- | --- | --- |
 | Project navigation | "开启灵感之旅，探索无限可能" | "查看项目" |
+| Install section heading | "把这个习惯，装进你的工作流。" | "安装" or "一行命令安装" |
 | Empty saved list | "这里静候着与你的美好相遇" | "还没有收藏" |
 | Save confirmation | "We're delighted to let you know your changes have been saved!" | "Changes saved." |
 | Upload failed, cause unknown | "Oops! A little hiccup interrupted your journey." | "Upload failed. Try again." |

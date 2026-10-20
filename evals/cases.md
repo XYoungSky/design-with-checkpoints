@@ -16,7 +16,7 @@ One run is a signal, not proof. Repeat across several cases before claiming an i
 
 | # | Request | Expected behavior |
 | --- | --- | --- |
-| 1 | New portfolio site from a vague brief | Restates the brief in 3–5 lines, asks one round of design-changing questions with options and a recommendation, waits; then proposes 2–3 directions with real-content samples |
+| 1 | New portfolio site from a vague brief | Restates the brief in 3–5 lines, asks one round of design-changing questions with options and a recommendation, including taste input, and waits; then proposes 2–3 directions as pages the user can open, with motion intensity asked separately |
 | 2 | New landing page from a detailed brief | Does not re-ask settled facts; asks only about open decisions, or asks the user to confirm the restated brief; still runs the direction checkpoint |
 | 3 | "The project title is clipped in the mobile nav" | Fixes it directly, shows before and after, retests 320 and 390px and the neighboring breakpoint; no discovery round |
 | 4 | "Make the header lighter" | Recognizes two readings (visual weight or color) and asks one question or shows both variants |
@@ -27,7 +27,7 @@ One run is a signal, not proof. Repeat across several cases before claiming an i
 | 8 | "You decide everything; build it" | Writes the brief and the chosen direction into the reply, builds, asks only for facts and permissions, and still runs both checks |
 | 9 | "Handle the details" with no direction given | Keeps the direction checkpoint |
 | 10 | "Show me a working sample before you expand it" | Builds and checks one slice, then waits |
-| 11 | "Review the checkout and recommend changes; do not edit" | Delivers findings and recommendations; makes no edits |
+| 11 | "Review the checkout and recommend changes; do not edit" | Makes no edits; delivers up to seven findings with location, what it sees, why it matters, a concrete fix, and a severity; keeps defects apart from design judgments; lists each animation's job; ends with one recommended next step |
 | 12 | Chinese and English content site | Chinese letter spacing 0, body line height 1.7 or more, line length within range; both languages pass the layout check at 320px |
 | 13 | "Make it more polished" | Names the most consequential observed issue and offers 2–3 concrete fixes with a recommendation; no broad taste questions |
 | 14 | User shares a reference site they like | Asks which part they like, shows that part with the user's content, copies no assets, and does not treat it as approval of a redesign |
@@ -35,6 +35,12 @@ One run is a signal, not proof. Repeat across several cases before claiming an i
 | 16 | Static screenshot of an animated reference | Does not invent timing or easing; states what needs to be tested |
 | 17 | Drawer with rapid open and close, keyboard, and reduced motion | Reverses from the current position, returns focus, leaves no scroll lock or overlay behind, works with reduced motion |
 | 18 | Backend-only API change | The skill does not trigger |
+| 19 | Redesign an existing marketing page | Audits at 390 and 1440px first; restates the brief with a keep list and 3–5 problems tied to screenshots; changes only the agreed areas |
+| 20 | Promo page; the user picks a quiet, typographic direction | Asks motion intensity as a separate question, recommends lively for a promotional page, and does not infer calm motion from the visual style |
+| 21 | The user combines parts of two directions | Confirms whatever the combination leaves open, such as motion intensity or color, before building |
+| 22 | "This entrance animation feels unnatural" | Replaces it with motion derived from the content at the same intensity; does not remove motion; avoids fade-up entrances and bounce |
+| 23 | Sample review on a page with rich motion | Runs the basic review only; records no video or frame sequences; gives the user the page to open with the motion inventory |
+| 24 | Copy for a promotional page | At most one slogan-style headline; other headings say what the section shows |
 
 ## Hard gates
 
@@ -46,4 +52,4 @@ A run fails, whatever its other qualities, if it:
 - reports a failed layout check item as passed;
 - takes an external action without permission.
 
-Record separately: unnecessary questions, rework caused by misalignment, and the quality of the design proposals.
+Record separately: unnecessary questions, rework caused by misalignment, the quality of the design proposals, machine-made patterns in the result, quoting the skill's rules to the user, and review work beyond the basic review.

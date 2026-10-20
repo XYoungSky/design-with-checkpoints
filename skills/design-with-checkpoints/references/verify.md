@@ -1,55 +1,40 @@
 # Verify
 
-Check the changed pages, states, and paths, and widen the check when the change touches shared components or global styles. Use a real browser: the host's browser tool, Playwright, or Puppeteer. If no browser is available, run the checks you can and report rendered behavior as untested.
+Keep the review basic and quick. The user judges how the page looks and moves; you confirm that nothing is broken.
 
-## Look at screenshots
+## Basic review
 
-Capture each changed page and state at 320, 390, 768, 1280, and 1440px wide, plus any widths the audience mainly uses. Open the screenshots and look at them; a file on disk is not a review. Compare them with the chosen direction, then run the [layout check](layout-and-type.md#layout-check).
+For each changed page:
 
-A screenshot shows one frame. It does not prove that an interaction or animation works.
+1. **Screenshots** at 390 and 1440px wide. Add 320 when the layout is tight, or the widths the audience mainly uses. Look at them and run the [layout check](layout-and-type.md#layout-check).
+2. **One small script**, when a browser tool is available: horizontal overflow, console errors, failed requests, text under 12px, and text contrast below 4.5:1 (3:1 for large text).
+3. **Keyboard:** Tab through the main controls once. Focus is visible and never trapped; Escape closes overlays.
+4. **Reduced motion:** turn it on once. All content is visible and every control works.
+5. **Motion:** confirm by script that animations end in the right state, including after rapid repeated clicks. Do not record videos or frame sequences. Give the user a page to open instead, with the [motion inventory](motion.md#motion-inventory).
 
-## Test interaction and motion
+Without a browser, run what you can and say that the rendered page is untested.
 
-- Keyboard: Tab and Shift+Tab order, visible focus, Enter and Space on controls, Escape on overlays, focus returning to the trigger after a dialog closes.
-- Touch: everything that appears on hover also works with a tap or focus.
-- Motion: every row of the [motion inventory](motion.md#motion-inventory) at normal speed, with rapid repeated input, and with `prefers-reduced-motion: reduce`.
-- Paths: primary actions, navigation, links, refresh, and the browser back button. Test forms with safe data; never send real messages or orders without permission.
-- Console and network: no errors and no failed requests.
+## Only when asked, or when the change is about it
 
-## Accessibility essentials
+A five-width matrix, 200% text zoom, touch emulation, CPU throttling, performance traces, cross-browser runs, and screen-reader checks.
 
-Use the project's target, or WCAG 2.2 AA when none is set:
+## Keep it light
 
-- text contrast 4.5:1, large text 3:1; control boundaries and focus indicators 3:1;
-- content reflows at 320px width without scrolling in two directions;
-- text enlarged to 200% loses no content or function;
-- pointer targets at least 24 × 24px, or spaced to the same effect;
-- focused elements are never fully hidden by sticky headers or overlays;
-- headings, landmarks, labels, and accessible names are present and accurate.
-
-An automated scan such as axe finds only part of these problems. A clean scan is not a pass.
-
-## Content
-
-Check real content in every supported language, the longest strings, and the empty, loading, error, and success states. No placeholder text remains in delivered work unless it is labeled as a placeholder.
-
-## Performance
-
-Measure only when motion, loading, or an agreed budget makes performance part of the task. Record the browser, device or emulation, and network profile with the result. A build passing or a Lighthouse score does not show how a real interaction feels.
+Save only the screenshots you show the user. Keep scratch scripts outside the deliverable and delete them when done. Test forms with safe data; never send real messages or orders.
 
 ## Report honestly
 
-Separate three kinds of claims: what you observed in a browser, what you inferred from the code, and what you did not test. Device emulation is not a physical device. A successful build is not a tested interface.
+Say what you saw in the browser, what you inferred from the code, and what you did not test. A successful build is not a tested interface.
 
 Handoff:
 
 ```text
-Changed: what changed, with links to files or a preview.
+Changed: what changed, with a link to the page or files.
 Decisions: consequential choices and who approved them.
 Motion: the chosen intensity and the final motion inventory.
-Checked: widths, browsers, keyboard, reduced motion, languages.
-Failed or untested: with the reason and the effect on users.
+Checked: widths, keyboard, reduced motion.
+Untested: what was not checked, if it matters.
 Next: the one thing the user needs to decide or do, if any.
 ```
 
-Recommend release only when no serious functional, content, layout, or accessibility problem remains. Publishing or deploying needs the user's permission even after the design is approved.
+Publishing or deploying needs the user's permission, even after the design is approved.

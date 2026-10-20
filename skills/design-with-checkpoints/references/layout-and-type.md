@@ -52,6 +52,7 @@ General:
 
 Fonts:
 
+- Typeface carries most of a page's character. For marketing and editorial pages, give headings a display face with a point of view: for Chinese, a Song serif such as Noto Serif SC or a distinctive sans; for English, a serif or grotesque with personality. Pair it with a neutral text face. Check the license and file size.
 - Put the English face first and the Chinese faces after it, so Latin characters use the English design: `"Inter", "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif`. Replace Inter with the project's face.
 - Monospace: `ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace`. Do not rely on the bare `monospace` keyword; it falls back to Courier on Windows.
 - Set `lang` on the root element and on any mixed passage, so browsers choose the correct glyphs and line-breaking rules.
@@ -74,6 +75,8 @@ These make a page look machine-made. Avoid them unless the user asks and the rea
 - decorative dot grids, orbit rings, and gradient blobs behind content;
 - three icon cards as the default feature section; everything centered;
 - important information in tiny uppercase monospace text;
+- the system sans for every text role on a marketing page;
+- every heading written in the same slogan pattern; see [interface copy](alignment.md#interface-copy);
 - negative letter spacing on Chinese text;
 - more than 7 font sizes, or one-off sizes per breakpoint;
 - hover effects on elements that cannot be clicked;
@@ -81,7 +84,7 @@ These make a page look machine-made. Avoid them unless the user asks and the rea
 
 ## Layout check
 
-Run this on every changed page and state at 320, 390, 768, 1280, and 1440px wide, with the longest real content. Fix each failure, or record why it is acceptable.
+Run this on the screenshots of every changed page at 390 and 1440px wide, adding 320 when the layout is tight, with the longest real content. Fix each failure, or record why it is acceptable.
 
 1. **Focus.** The primary task and the focal point are clear on the first screen.
 2. **Fit.** No clipping, overlap, or horizontal scrolling. Headings wrap evenly, with no single character or word alone on the last line.

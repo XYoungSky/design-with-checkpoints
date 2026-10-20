@@ -51,14 +51,14 @@ In other tools, select the skill using the tool's skill picker or ask an agent w
 | --- | --- |
 | New website | Establish goals, content, and design direction, then build in stages |
 | Redesign | Inspect the interface, preserve effective design, and address the main problems |
-| Plan or review | Analyze problems, recommend design changes, and outline validation |
+| Design review | Prioritized findings with concrete fixes and severity, without editing |
 | Focused improvement | Identify and fix a specific issue, then retest related functionality |
 
 ## Key Features
 
 - **Three checkpoints.** Confirm the brief, choose a direction from real-content samples, and review one slice before it is repeated across pages.
 - **Opinionated proposals.** Each direction states its design idea, its layout, type, and motion moves, what it costs, and a recommendation.
-- **Layout check.** Every changed page is checked at five widths, in Chinese and English, against concrete type and spacing rules.
+- **Layout check.** Every changed page is checked at phone and desktop widths, in Chinese and English, against concrete type and spacing rules and a list of machine-made patterns.
 - **Motion intensity and inventory.** Choose calm, lively, or expressive motion from samples. Every animation is listed with its job, duration, and reduced-motion fallback; you see the list at the direction check, the sample review, and in the final report.
 - **Lightweight.** Small tweaks are fixed directly; reference files load only when needed.
 
@@ -68,7 +68,7 @@ In other tools, select the skill using the tool's skill picker or ask an agent w
 - [Alignment](skills/design-with-checkpoints/references/alignment.md): restating the brief, asking questions, presenting directions, recording decisions, and interface copy.
 - [Layout and type](skills/design-with-checkpoints/references/layout-and-type.md): composition, grid, spacing, Chinese and English typography, and the layout check.
 - [Motion](skills/design-with-checkpoints/references/motion.md): animation jobs, intensity levels, techniques, starting values, reduced motion, and the motion inventory.
-- [Verify](skills/design-with-checkpoints/references/verify.md): screenshots, interaction, accessibility, and the handoff report.
+- [Verify](skills/design-with-checkpoints/references/verify.md): the basic review and the handoff report.
 - [Regression cases](evals/cases.md): cases for revising the skill; not installed with it.
 
 ## Acknowledgements
@@ -129,14 +129,14 @@ $design-with-checkpoints 改进当前网站。
 | --- | --- |
 | 新建网站 | 明确目标、内容与设计方向，逐步完成实现 |
 | 界面改版 | 检查现有界面，保留有效设计，改善主要问题 |
-| 方案与审查 | 分析问题，提供设计建议和验证思路 |
+| 设计审查 | 按优先级列出问题、具体修改方案和严重程度，不改动代码 |
 | 局部优化 | 定位并修改具体问题，复测相关功能 |
 
 ### 核心特点
 
 - **三个检查点。** 确认需求复述；用真实内容的小样选择方向；先审阅一个代表性片段，再扩展到其他页面。
 - **有主张的方案。** 每个方向都说明设计想法、具体的排版、字体与动效做法、代价和推荐理由。
-- **排版检查。** 每个改动的页面都在五种宽度、中英文两种语言下，按具体的字体与间距规则检查。
+- **排版检查。** 每个改动的页面都在手机和桌面宽度、中英文两种语言下，按具体的字体与间距规则检查，并排除常见的 AI 模板特征。
 - **动效强度与动效清单。** 通过样例在克制、生动、华丽三档中选择动效强度。每个动效都列出用途、时长和减弱动效时的替代方式；方向检查、样例审阅和最终报告中都会给你看这份清单。
 - **轻量。** 小改动直接修改；参考文件只在需要时读取。
 
@@ -146,7 +146,7 @@ $design-with-checkpoints 改进当前网站。
 - [对齐](skills/design-with-checkpoints/references/alignment.md)：复述需求、提问、呈现方向、记录决策和界面文案。
 - [排版与字体](skills/design-with-checkpoints/references/layout-and-type.md)：构图、网格、间距、中英文排版和排版检查。
 - [动效](skills/design-with-checkpoints/references/motion.md)：动效用途、强度分档、技法、起点数值、减弱动效和动效清单。
-- [验证](skills/design-with-checkpoints/references/verify.md)：截图、交互、可访问性和交付报告。
+- [验证](skills/design-with-checkpoints/references/verify.md)：基础审阅和交付报告。
 - [回归用例](evals/cases.md)：修订 skill 时使用，不随 skill 安装。
 
 ### 致谢
